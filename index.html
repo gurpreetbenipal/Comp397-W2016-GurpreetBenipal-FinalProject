@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--Source file name:index.html-->
+<!--Author's Name:Gurpreet Benipal-->
+<!--Last Modified By Gurpreet Benipal-->
+<!--Last Modified On: -->
+<!--Description: 
+The goal of this game is to gain scores by collecting different items and escape the player from enemies and weapons.
+In this game, the player is actually a Fish that can move up and down in the sea with the help of mouse pointer. 
+The fish has to collect all the items to gain more and more scores. 100 score is associated with each item. 
+Whenever, the fish collects any item, its score will increase by 100. On the other side, the fish has also encountered 
+various enemies and weapons at each level in this game. The enemy can kill the player and his life count is decreased by 1. 
+The fish can get only 5 lives in this game. When the lives count reaches to 0, the game will be over. After that the player 
+can restart the game by clicking on the Play Again button.
+There are 3 different levels in this game and each level has different themes, different enemies and different items to 
+collect in it.
+-->
+
+<!-- This game is tested on Mozilla Firefox and Google Chrome-->
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THE SEA WORLD-Gurpreet Benipal</title>
+    <!-- CSS Section -->
+    <link href="Content/reset.css" rel="stylesheet" />
+    <link href="Content/game.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="game">
+        <canvas id="canvas" width="700" height="480"></canvas>
+    </div>
+
+    <!-- JavaScript Libraries-->
+    <script src="Scripts/config/config.js"></script>
+
+    <script src="Scripts/lib/jquery-2.1.4.min.js"></script>
+    <script src="Scripts/lib/Stats.js"></script>
+    <script src="Scripts/lib/easeljs-0.8.1.min.js"></script>
+    <script src="Scripts/lib/tweenjs-0.6.1.min.js"></script>
+    <script src="Scripts/lib/soundjs-0.6.1.min.js"></script>
+    <script src="Scripts/lib/preloadjs-0.6.1.min.js"></script>
+
+    <!-- Game Scripts -->
+    <script src="Scripts/objects/asset.js"></script>
+    <script src="Scripts/objects/label.js"></script>
+    <script src="Scripts/objects/button.js"></script>
+    <script src="Scripts/objects/scene.js"></script>
+    <script src="Scripts/objects/gameobject.js"></script>
+    
+    <script src="Scripts/objects/sea.js"></script>
+    <!--
+    <script src="Scripts/objects/bird.js"></script>
+    <script src="Scripts/objects/dragon.js"></script>
+    <script src="Scripts/objects/player.js"></script>
+    <script src="Scripts/objects/explosion.js"></script>
+    <script src="Scripts/objects/scoresystem.js"></script>
+    <script src="Scripts/managers/collision.js"></script>
+    -->
+
+    <!-- Scene Scripts -->
+    <script src="Scripts/scenes/end.js"></script>
+    <script src="Scripts/scenes/play.js"></script>
+    <script src="Scripts/scenes/menu.js"></script>
+
+    <!-- Main Game Scripts -->
+    <script src="Scripts/core/game.js"></script>
+</body>
+
+</html>
