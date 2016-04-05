@@ -10,7 +10,7 @@ var objects;
         __extends(Player, _super);
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
         function Player() {
-            _super.call(this, assets.getResult("aladdin"));
+            _super.call(this, assets.getResult("Fish"));
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
             this.regX = this.width * 0.5;

@@ -17,7 +17,7 @@ var scenes;
         // Start Method
         Levels.prototype.start = function () {
             // added Sea to the scene
-            this._sea = new objects.Sea();
+            this._sea = new objects.Sea("Sea");
             this.addChild(this._sea);
             //Add TITLE Label
             this._titleLabel = new objects.Label("Select Your Level", "bold 24px Cambiria", "#0033cc", config.Screen.CENTER_X, 30, true);

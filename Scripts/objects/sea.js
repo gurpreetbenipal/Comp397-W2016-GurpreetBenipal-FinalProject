@@ -9,8 +9,8 @@ var objects;
     var Sea = (function (_super) {
         __extends(Sea, _super);
         //CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
-        function Sea() {
-            _super.call(this, "Sea");
+        function Sea(bitmapString) {
+            _super.call(this, bitmapString);
             this._speed.x = 5; // 5 pixels per frame
             this._reset(0);
         }

@@ -13,7 +13,7 @@ module objects {
         
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
         constructor() {
-            super(assets.getResult("aladdin"));
+            super(assets.getResult("Fish"));
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
 

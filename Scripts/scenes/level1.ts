@@ -5,6 +5,7 @@ module scenes {
         //PRIVATE INSTANCE VARIABLES ++++++++++++++++++++++
         private _titleLabel: objects.Label;
         private _sea: objects.Sea;
+        private _player: objects.Player;
         
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++
         constructor() {
@@ -15,8 +16,8 @@ module scenes {
         
         // Start Method
         public start(): void {
-            // added Sky to the scene
-            this._sea = new objects.Sea();
+            // added Sea to the scene
+            this._sea = new objects.Sea("Sea");
             this.addChild(this._sea);
             
             //Add TITLE Label
@@ -28,6 +29,10 @@ module scenes {
                 30, true);
             this.addChild(this._titleLabel);
             
+            // added Player to the scene
+            this._player = new objects.Player();
+            this.addChild(this._player);
+            
             // add the Score Board to the Game Over Scene
            // this.addChild(play.scoreboard);
 
@@ -38,6 +43,7 @@ module scenes {
         // PLAY Scene updates here
         public update(): void {
             this._sea.update();
+            this._player.update();
         }
         
         

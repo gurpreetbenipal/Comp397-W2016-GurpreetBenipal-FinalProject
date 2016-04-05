@@ -3,8 +3,8 @@ module objects {
     export class Sea extends objects.GameObject {
       
         //CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
-        constructor() {
-            super("Sea");
+        constructor(bitmapString:string) {
+            super(bitmapString);
             this._speed.x = 5;           // 5 pixels per frame
             this._reset(0);
         }

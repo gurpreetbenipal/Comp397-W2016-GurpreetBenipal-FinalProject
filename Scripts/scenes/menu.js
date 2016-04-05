@@ -17,7 +17,7 @@ var scenes;
         // Start Method
         Menu.prototype.start = function () {
             // added Sea to the scene
-            this._sea = new objects.Sea();
+            this._sea = new objects.Sea("Sea");
             this.addChild(this._sea);
             //Add WELCOME Label
             this._welcomeLabel = new objects.Label("WELCOME TO 'THE SEA WORLD'", "bold 24px Cambiria", "#0033cc", config.Screen.CENTER_X + 30, 30, true);

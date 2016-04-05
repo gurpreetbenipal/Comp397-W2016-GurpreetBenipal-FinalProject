@@ -19,7 +19,7 @@ module scenes {
         // Start Method
         public start(): void {
             // added Sea to the scene
-            this._sea = new objects.Sea();
+            this._sea = new objects.Sea("Sea");
             this.addChild(this._sea);
             
             //Add WELCOME Label

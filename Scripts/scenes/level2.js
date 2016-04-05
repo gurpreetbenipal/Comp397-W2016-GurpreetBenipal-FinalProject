@@ -17,11 +17,14 @@ var scenes;
         // Start Method
         Level2.prototype.start = function () {
             // added Sea to the scene
-            this._sea = new objects.Sea();
+            this._sea = new objects.Sea("Level2Sea");
             this.addChild(this._sea);
             //Add TITLE Label
             this._titleLabel = new objects.Label("LEVEL 2", "bold 24px Cambiria", "#0033cc", config.Screen.CENTER_X, 30, true);
             this.addChild(this._titleLabel);
+            // added Player to the scene
+            this._player = new objects.Player();
+            this.addChild(this._player);
             // add the Score Board to the Game Over Scene
             // this.addChild(play.scoreboard);
             // add this scene to the global stage container
@@ -30,6 +33,7 @@ var scenes;
         // LEVEL2 Scene updates here
         Level2.prototype.update = function () {
             this._sea.update();
+            this._player.update();
         };
         return Level2;
     })(objects.Scene);
