@@ -18,7 +18,7 @@ module scenes {
         
         // Start Method
         public start(): void {
-            // added Sky to the scene
+            // added Sea to the scene
             this._sea = new objects.Sea();
             this.addChild(this._sea);
             
@@ -26,7 +26,7 @@ module scenes {
             this._welcomeLabel = new objects.Label(
                 "WELCOME TO 'THE SEA WORLD'",
                 "bold 24px Cambiria",
-                "#009900",
+                "#0033cc",
                 config.Screen.CENTER_X + 30,
                 30, true);
             this.addChild(this._welcomeLabel);
@@ -101,7 +101,7 @@ module scenes {
         private _levelsButtonClick(event: createjs.MouseEvent) {
             createjs.Sound.play("buttonpress");
             // Switch to the LEVELS Scene
-            scene = config.Scene.PLAY;
+            scene = config.Scene.LEVELS;
 
             changeScene();
         }

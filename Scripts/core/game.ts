@@ -14,6 +14,10 @@ var scene: number;
 var menu: scenes.Menu;
 var play: scenes.Play;
 var end: scenes.End;
+var levels: scenes.Levels;
+var level1: scenes.Level1;
+var level2: scenes.Level2;
+var level3: scenes.Level3;
 
 var assetData: objects.Asset[] = [
     // Add your Assets here
@@ -21,6 +25,10 @@ var assetData: objects.Asset[] = [
     { id: "InstructionsButton", src: "../../Assets/images/InstructionsButton.png" },
     { id: "LevelsButton", src: "../../Assets/images/LevelsButton.png" },
     { id: "Sea", src: "../../Assets/images/sea.png" },
+    { id: "Level1Button", src: "../../Assets/images/Level1Button.png" },
+    { id: "Level2Button", src: "../../Assets/images/Level2Button.png" },
+    { id: "Level3Button", src: "../../Assets/images/Level3Button.png" },
+    { id: "BackButton", src: "../../Assets/images/BackButton.png" },
     
     { id: "buttonpress", src: "../../Assets/audio/buttonpress.wav" },
     { id: "gamestartsound", src: "../../Assets/audio/gamestart.wav" },
@@ -111,6 +119,34 @@ function changeScene(): void {
             end = new scenes.End();
             currentScene = end;
             console.log("Starting END Scene");
+            break;
+         case config.Scene.LEVELS:
+            // show the LEVELS scene
+            stage.removeAllChildren();
+            levels = new scenes.Levels();
+            currentScene = levels;
+            console.log("Starting LEVELS Scene");
+            break;
+         case config.Scene.LEVEL1:
+            // show the LEVELS scene
+            stage.removeAllChildren();
+            level1 = new scenes.Level1();
+            currentScene = level1;
+            console.log("Starting LEVELS Scene");
+            break;
+         case config.Scene.LEVEL2:
+            // show the LEVELS scene
+            stage.removeAllChildren();
+            level2 = new scenes.Level2();
+            currentScene = level2;
+            console.log("Starting LEVELS Scene");
+            break;
+         case config.Scene.LEVEL3:
+            // show the LEVELS scene
+            stage.removeAllChildren();
+            level3 = new scenes.Level3();
+            currentScene = level3;
+            console.log("Starting LEVELS Scene");
             break;
     }
 

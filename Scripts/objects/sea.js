@@ -29,7 +29,7 @@ var objects;
         Sea.prototype.update = function () {
             //Scroll the sky 5 pixels per frame
             this.x -= this._speed.x;
-            this._checkBounds(-1340);
+            this._checkBounds(-1280);
         };
         return Sea;
     })(objects.GameObject);
