@@ -16,24 +16,40 @@ var scenes;
         // PUBLIC METHODS +++++++++++++++++++++++++++++++++
         // Start Method
         Level1.prototype.start = function () {
+            //Set the SeaMonster Count
+            this._seamonsterCount = 3;
+            //Instantiate SeaMonster Array
+            this._seamonsters = new Array();
             // added Sea to the scene
             this._sea = new objects.Sea("Sea");
             this.addChild(this._sea);
             //Add TITLE Label
             this._titleLabel = new objects.Label("LEVEL 1", "bold 24px Cambiria", "#0033cc", config.Screen.CENTER_X, 30, true);
             this.addChild(this._titleLabel);
+            // added Item to the scene
+            this._item = new objects.Item("Coin");
+            this.addChild(this._item);
             // added Player to the scene
             this._player = new objects.Player();
             this.addChild(this._player);
+            // added SeaMonsters to the scene
+            for (var seamonster = 0; seamonster < this._seamonsterCount; seamonster++) {
+                this._seamonsters[seamonster] = new objects.SeaMonster("SeaMonster1");
+                this.addChild(this._seamonsters[seamonster]);
+            }
             // add the Score Board to the Game Over Scene
             // this.addChild(play.scoreboard);
             // add this scene to the global stage container
             stage.addChild(this);
         };
-        // PLAY Scene updates here
+        // Level1 Scene updates here
         Level1.prototype.update = function () {
             this._sea.update();
             this._player.update();
+            this._item.update();
+            this._seamonsters.forEach(function (seamonster) {
+                seamonster.update();
+            });
         };
         return Level1;
     })(objects.Scene);

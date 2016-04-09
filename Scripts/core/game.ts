@@ -33,6 +33,14 @@ var assetData: objects.Asset[] = [
     { id: "BackButton", src: "../../Assets/images/BackButton.png" },
     { id: "PlayAgainButton", src: "../../Assets/images/PlayAgainButton.png" },
     { id: "Fish", src: "../../Assets/images/fish.png" },
+    { id: "Coin", src: "../../Assets/images/Coin.png" },
+    { id: "Coins", src: "../../Assets/images/coins.png" },
+    { id: "CoinStack", src: "../../Assets/images/coinStack.png" },
+    { id: "Star", src: "../../Assets/images/star.png" },
+    { id: "SeaMonster1", src: "../../Assets/images/SeaMonster1.png" },
+    { id: "SeaMonster2", src: "../../Assets/images/SeaMonster2.png" },
+    { id: "SeaMonster3", src: "../../Assets/images/SeaMonster3.png" },
+    { id: "SeaMonster4", src: "../../Assets/images/SeaMonster4.png" },
     
     { id: "buttonpress", src: "../../Assets/audio/buttonpress.wav" },
     { id: "gamestartsound", src: "../../Assets/audio/gamestart.wav" },
@@ -136,21 +144,21 @@ function changeScene(): void {
             stage.removeAllChildren();
             level1 = new scenes.Level1();
             currentScene = level1;
-            console.log("Starting LEVELS Scene");
+            console.log("Starting LEVEL 1 Scene");
             break;
          case config.Scene.LEVEL2:
             // show the LEVELS scene
             stage.removeAllChildren();
             level2 = new scenes.Level2();
             currentScene = level2;
-            console.log("Starting LEVELS Scene");
+            console.log("Starting LEVEL 2 Scene");
             break;
          case config.Scene.LEVEL3:
             // show the LEVELS scene
             stage.removeAllChildren();
             level3 = new scenes.Level3();
             currentScene = level3;
-            console.log("Starting LEVELS Scene");
+            console.log("Starting LEVEL 3 Scene");
             break;
     }
 
