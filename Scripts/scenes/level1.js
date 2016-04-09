@@ -17,7 +17,7 @@ var scenes;
         // Start Method
         Level1.prototype.start = function () {
             //Set the SeaMonster Count
-            this._seamonsterCount = 3;
+            this._seamonsterCount = 2;
             //Instantiate SeaMonster Array
             this._seamonsters = new Array();
             // added Sea to the scene
@@ -34,7 +34,7 @@ var scenes;
             this.addChild(this._player);
             // added SeaMonsters to the scene
             for (var seamonster = 0; seamonster < this._seamonsterCount; seamonster++) {
-                this._seamonsters[seamonster] = new objects.SeaMonster("SeaMonster1");
+                this._seamonsters[seamonster] = new objects.SeaMonsterLevel1("SeaMonster1Level1");
                 this.addChild(this._seamonsters[seamonster]);
             }
             // add the Score Board to the Game Over Scene

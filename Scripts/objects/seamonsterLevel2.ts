@@ -1,12 +1,12 @@
 module objects {
-
-    export class SeaMonster extends objects.GameObject {
+    //SeaMonsterLevel2 CLASS +++++++++++++++++++++++++++++++++++++
+    export class SeaMonsterLevel2 extends objects.GameObject {
         
         //CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
         constructor(bitmapstring:string) {
             super(bitmapstring);
             this._reset(this._rightBounds);
-            this.name = "seamonster";
+            this.name = "seamonsterlevel2";
             this.isHit = false;                 // If seamonster collides with the player, then isHit = true
         }
         
@@ -20,24 +20,31 @@ module objects {
         
         //Reset the seamonster offscreen
         protected _reset(value: number): void {
-            var randomNumber: number = Math.floor(Math.random() * 4 + 1);
+            var randomNumber: number = Math.floor(Math.random() * 6 + 1);
             switch (randomNumber) {
                 case 1:
-                    this.image = assets.getResult("SeaMonster1");
+                    this.image = assets.getResult("SeaMonster1Level2");
                     break;
                 case 2:
-                    this.image = assets.getResult("SeaMonster2");
+                    this.image = assets.getResult("SeaMonster2Level2");
                     break;
                 case 3:
-                    this.image = assets.getResult("SeaMonster3");
+                    this.image = assets.getResult("SeaMonster3Level2");
                     break;
                 case 4:
-                    this.image = assets.getResult("SeaMonster4");
+                    this.image = assets.getResult("SeaMonster4Level2");
+                    break;
+                case 5:
+                    this.image = assets.getResult("SeaMonster5Level2");
+                    break;
+                case 6:
+                    this.image = assets.getResult("SeaMonster6Level2");
                     break;
                 default:
                     break;
             }
             this._speed.x = Math.floor(Math.random() * 5) + 5;
+            this._speed.x = (this._speed.x==5)?7:this._speed.x;
             this._speed.y = Math.floor(Math.random() * 4) - 2;
 
             this.x = value;
@@ -50,7 +57,7 @@ module objects {
             //Scroll the Seamonster 5 pixels per frame
             this.x -= this._speed.x;
             this.y -= this._speed.y;
-            this._checkBounds(this._leftBounds);
+            this._checkBounds(this._leftBounds - this.width);
         }
     }
 }

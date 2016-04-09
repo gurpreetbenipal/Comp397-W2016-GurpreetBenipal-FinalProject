@@ -17,14 +17,14 @@ var scenes;
         // Start Method
         Level2.prototype.start = function () {
             //Set the SeaMonster Count
-            this._seamonsterCount = 3;
+            this._seamonsterCount = 4;
             //Instantiate SeaMonster Array
             this._seamonsters = new Array();
             // added Sea to the scene
             this._sea = new objects.Sea("Sea");
             this.addChild(this._sea);
             //Add TITLE Label2
-            this._titleLabel = new objects.Label("LEVEL 1", "bold 24px Cambiria", "#0033cc", config.Screen.CENTER_X, 30, true);
+            this._titleLabel = new objects.Label("LEVEL 2", "bold 24px Cambiria", "#0033cc", config.Screen.CENTER_X, 30, true);
             this.addChild(this._titleLabel);
             // added Item to the scene
             this._item = new objects.Item("Coin");
@@ -34,7 +34,7 @@ var scenes;
             this.addChild(this._player);
             // added SeaMonsters to the scene
             for (var seamonster = 0; seamonster < this._seamonsterCount; seamonster++) {
-                this._seamonsters[seamonster] = new objects.SeaMonster("SeaMonster1");
+                this._seamonsters[seamonster] = new objects.SeaMonsterLevel2("SeaMonster1Level2");
                 this.addChild(this._seamonsters[seamonster]);
             }
             // add the Score Board to the Game Over Scene

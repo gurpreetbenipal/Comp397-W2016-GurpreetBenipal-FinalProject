@@ -7,7 +7,7 @@ module scenes {
         private _sea: objects.Sea;
         private _player: objects.Player;
         private _item: objects.Item;
-        private _seamonsters: objects.SeaMonster[];
+        private _seamonsters: objects.SeaMonsterLevel1[];
         private _seamonsterCount: number;
         
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++
@@ -20,10 +20,10 @@ module scenes {
         // Start Method
         public start(): void {
             //Set the SeaMonster Count
-            this._seamonsterCount = 3;
+            this._seamonsterCount = 2;
             
             //Instantiate SeaMonster Array
-            this._seamonsters = new Array<objects.SeaMonster>();
+            this._seamonsters = new Array<objects.SeaMonsterLevel1>();
             
             // added Sea to the scene
             this._sea = new objects.Sea("Sea");
@@ -48,7 +48,7 @@ module scenes {
             
              // added SeaMonsters to the scene
             for (var seamonster: number = 0; seamonster < this._seamonsterCount; seamonster++) {
-                this._seamonsters[seamonster] = new objects.SeaMonster("SeaMonster1");
+                this._seamonsters[seamonster] = new objects.SeaMonsterLevel1("SeaMonster1Level1");
                 this.addChild(this._seamonsters[seamonster]);
             }
            

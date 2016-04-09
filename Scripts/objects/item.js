@@ -36,6 +36,9 @@ var objects;
                     this.image = assets.getResult("CoinStack");
                     break;
                 case 4:
+                    this.image = assets.getResult("MoneyBag");
+                    break;
+                case 5:
                     this.image = assets.getResult("Star");
                     break;
                 default:
