@@ -1,4 +1,6 @@
 ﻿// MENU SCENE
+var scores:number;
+
 module scenes {
     //MENU CLASS ++++++++++++++++++++++++++++++++
     export class Menu extends objects.Scene {
@@ -18,6 +20,7 @@ module scenes {
         
         // Start Method
         public start(): void {
+            scores=0;
             // added Sea to the scene
             this._sea = new objects.Sea("Sea");
             this.addChild(this._sea);

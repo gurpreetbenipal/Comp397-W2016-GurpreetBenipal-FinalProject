@@ -1,4 +1,4 @@
-var scores:number = 0;
+
 module objects {
     export class ScoreSystem extends createjs.Container {
         // PRIVATE INSTANCE VARIABLES+++++++++++++++++++++++

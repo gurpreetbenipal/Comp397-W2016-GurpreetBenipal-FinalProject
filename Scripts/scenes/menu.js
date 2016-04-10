@@ -4,6 +4,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 // MENU SCENE
+var scores;
 var scenes;
 (function (scenes) {
     //MENU CLASS ++++++++++++++++++++++++++++++++
@@ -16,6 +17,7 @@ var scenes;
         // PUBLIC METHODS +++++++++++++++++++++++
         // Start Method
         Menu.prototype.start = function () {
+            scores = 0;
             // added Sea to the scene
             this._sea = new objects.Sea("Sea");
             this.addChild(this._sea);
