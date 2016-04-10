@@ -7,6 +7,8 @@
 /// <reference path="../objects/item.ts" />
 /// <reference path="../objects/seamonsterLevel1.ts" />
 /// <reference path="../objects/seamonsterLevel2.ts" />
+/// <reference path="../objects/scoresystem.ts" />
+/// <reference path="../managers/collision.ts" />
 
 /// <reference path="../scenes/levels.ts" />
 /// <reference path="../scenes/level1.ts" />

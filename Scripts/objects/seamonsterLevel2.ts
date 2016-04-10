@@ -6,7 +6,7 @@ module objects {
         constructor(bitmapstring:string) {
             super(bitmapstring);
             this._reset(this._rightBounds);
-            this.name = "seamonsterlevel2";
+            this.name = "seamonster";
             this.isHit = false;                 // If seamonster collides with the player, then isHit = true
         }
         

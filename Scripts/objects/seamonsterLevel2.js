@@ -12,7 +12,7 @@ var objects;
         function SeaMonsterLevel2(bitmapstring) {
             _super.call(this, bitmapstring);
             this._reset(this._rightBounds);
-            this.name = "seamonsterlevel2";
+            this.name = "seamonster";
             this.isHit = false; // If seamonster collides with the player, then isHit = true
         }
         // Check to see if the top of the seamonster

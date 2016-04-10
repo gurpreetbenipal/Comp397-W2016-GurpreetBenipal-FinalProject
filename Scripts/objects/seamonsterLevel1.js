@@ -13,7 +13,7 @@ var objects;
             _super.call(this, bitmapstring);
             this._speed.x = 5; // Seamonster Speed
             this._reset(this._rightBounds);
-            this.name = "seamonsterlevel1";
+            this.name = "seamonster";
             this.isHit = false; // If seamonster collides with the player, then isHit = true
         }
         // Check to see if the top of the seamonster

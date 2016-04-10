@@ -7,7 +7,7 @@ module objects {
             super(bitmapstring);
             this._speed.x = 5;           // Seamonster Speed
             this._reset(this._rightBounds);
-            this.name = "seamonsterlevel1";
+            this.name = "seamonster";
             this.isHit = false;                 // If seamonster collides with the player, then isHit = true
         }
         

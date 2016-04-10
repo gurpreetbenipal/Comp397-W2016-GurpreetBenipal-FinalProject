@@ -37,19 +37,27 @@ var scenes;
                 this._seamonsters[seamonster] = new objects.SeaMonsterLevel2("SeaMonster1Level2");
                 this.addChild(this._seamonsters[seamonster]);
             }
-            // add the Score Board to the Game Over Scene
-            // this.addChild(play.scoreboard);
+            //added ScoreSystem to the scene
+            this.scoreboard = new objects.ScoreSystem();
+            this.addChild(this.scoreboard);
+            // added Collision Manager to the scene
+            this._collision = new managers.Collision(this._player);
             // add this scene to the global stage container
             stage.addChild(this);
         };
         // Level2 Scene updates here
         Level2.prototype.update = function () {
+            var _this = this;
             this._sea.update();
             this._player.update();
             this._item.update();
             this._seamonsters.forEach(function (seamonster) {
                 seamonster.update();
+                // Check the Collision with SEAMONSTER
+                _this._collision.checkForLevel2(seamonster);
             });
+            // Check the Collision with ITEM
+            this._collision.checkForLevel2(this._item);
         };
         return Level2;
     })(objects.Scene);

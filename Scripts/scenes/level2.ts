@@ -9,6 +9,10 @@ module scenes {
         private _item: objects.Item;
         private _seamonsters: objects.SeaMonsterLevel2[];
         private _seamonsterCount: number;
+        private _collision: managers.Collision;
+        
+        //PUBLIC INSTANCE VARIABLES ++++++++++++
+        public scoreboard: objects.ScoreSystem;
         
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++
         constructor() {
@@ -46,16 +50,19 @@ module scenes {
             this._player = new objects.Player();
             this.addChild(this._player);
             
-             // added SeaMonsters to the scene
+            // added SeaMonsters to the scene
             for (var seamonster: number = 0; seamonster < this._seamonsterCount; seamonster++) {
                 this._seamonsters[seamonster] = new objects.SeaMonsterLevel2("SeaMonster1Level2");
                 this.addChild(this._seamonsters[seamonster]);
             }
            
-            
-            // add the Score Board to the Game Over Scene
-           // this.addChild(play.scoreboard);
+           //added ScoreSystem to the scene
+            this.scoreboard = new objects.ScoreSystem();
+            this.addChild(this.scoreboard);
 
+            // added Collision Manager to the scene
+            this._collision = new managers.Collision(this._player);
+            
             // add this scene to the global stage container
             stage.addChild(this);
         }
@@ -68,8 +75,11 @@ module scenes {
             
             this._seamonsters.forEach(seamonster => {
                 seamonster.update();
-                
+                // Check the Collision with SEAMONSTER
+                this._collision.checkForLevel2(seamonster);
             });
+            // Check the Collision with ITEM
+            this._collision.checkForLevel2(this._item);
         }
         
         
