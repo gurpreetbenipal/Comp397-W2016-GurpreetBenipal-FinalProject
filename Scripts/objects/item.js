@@ -9,11 +9,12 @@ var objects;
     var Item = (function (_super) {
         __extends(Item, _super);
         //CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
-        function Item(bitmapString) {
+        function Item(bitmapString, currentLevel) {
             _super.call(this, bitmapString);
             this._speed.x = 5; // Item Speed
             this._reset(this._rightBounds);
             this.name = "item";
+            this._currentLevel = currentLevel;
         }
         // Check to see if the top of the item
         // has outside the viewport
@@ -24,25 +25,69 @@ var objects;
         };
         //Reset the item offscreen
         Item.prototype._reset = function (value) {
-            var randomNumber = Math.floor(Math.random() * 4 + 1);
-            switch (randomNumber) {
-                case 1:
-                    this.image = assets.getResult("Coin");
-                    break;
-                case 2:
-                    this.image = assets.getResult("Coins");
-                    break;
-                case 3:
-                    this.image = assets.getResult("CoinStack");
-                    break;
-                case 4:
-                    this.image = assets.getResult("MoneyBag");
-                    break;
-                case 5:
-                    this.image = assets.getResult("Star");
-                    break;
-                default:
-                    break;
+            var randomNumber = Math.floor(Math.random() * 5) + 1;
+            if (this._currentLevel == "level1") {
+                switch (randomNumber) {
+                    case 1:
+                        this.image = assets.getResult("Coin");
+                        break;
+                    case 2:
+                        this.image = assets.getResult("Coins");
+                        break;
+                    case 3:
+                        this.image = assets.getResult("CoinStack");
+                        break;
+                    case 4:
+                        this.image = assets.getResult("MoneyBag");
+                        break;
+                    case 5:
+                        this.image = assets.getResult("Star");
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else if (this._currentLevel == "level2") {
+                switch (randomNumber) {
+                    case 1:
+                        this.image = assets.getResult("Stars");
+                        break;
+                    case 2:
+                        this.image = assets.getResult("Crown");
+                        break;
+                    case 3:
+                        this.image = assets.getResult("GoldPot");
+                        break;
+                    case 4:
+                        this.image = assets.getResult("Eagle");
+                        break;
+                    case 5:
+                        this.image = assets.getResult("Heart");
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else if (this._currentLevel == "level3") {
+                switch (randomNumber) {
+                    case 1:
+                        this.image = assets.getResult("Coin");
+                        break;
+                    case 2:
+                        this.image = assets.getResult("Coins");
+                        break;
+                    case 3:
+                        this.image = assets.getResult("CoinStack");
+                        break;
+                    case 4:
+                        this.image = assets.getResult("MoneyBag");
+                        break;
+                    case 5:
+                        this.image = assets.getResult("Star");
+                        break;
+                    default:
+                        break;
+                }
             }
             this.x = value;
             this.y = Math.floor(Math.random() * this._bottomBounds) + this._topBounds;

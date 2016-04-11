@@ -8,6 +8,7 @@ module scenes {
         private _welcomeLabel: objects.Label;
         private _playButton: objects.Button;
         private _instructionsButton: objects.Button;
+        private _exitButton: objects.Button;
         private _levelsButton: objects.Button;
         private _sea: objects.Sea;
         
@@ -20,9 +21,19 @@ module scenes {
         
         // Start Method
         public start(): void {
+            
+            // Stop the Previous Background Music
+            createjs.Sound.stop();
+            
+            // Generate the Background Music Infinitely
+            createjs.Sound.play("SeaWavesSound", { "loop": -1 });
+            
             scores=0;
+            
+            
+            
             // added Sea to the scene
-            this._sea = new objects.Sea("Sea");
+            this._sea = new objects.Sea("Level1Sea");
             this.addChild(this._sea);
             
             //Add WELCOME Label
@@ -55,11 +66,21 @@ module scenes {
             // INSTRUCTIONS Button event listener
             this._instructionsButton.on("click", this._instructionsButtonClick, this);
             
+            // add the EXIT button to the MENU scene
+            this._exitButton = new objects.Button(
+                "ExitButton",
+                config.Screen.CENTER_X,
+                config.Screen.CENTER_Y + 100, true);
+            this.addChild(this._exitButton);
+            
+            // EXIT Button event listener
+            this._exitButton.on("click", this._exitButtonClick, this);
+            
             // add the LEVELS button to the MENU scene
             this._levelsButton = new objects.Button(
                 "LevelsButton",
                 config.Screen.CENTER_X,
-                config.Screen.CENTER_Y + 100, true);
+                config.Screen.CENTER_Y + 200, true);
             this.addChild(this._levelsButton);
             
             // LEVELS Button event listener
@@ -86,8 +107,6 @@ module scenes {
             // Switch the THEME of the Scene to DAYTHEME
             //theme = config.Sky.DAYTHEME;
             
-            // Generate the Background Music Infinitely
-            createjs.Sound.play("dayplaysound", { "loop": -1 });
             changeScene();
         }
         
@@ -96,7 +115,7 @@ module scenes {
             createjs.Sound.play("buttonpress");
             // Switch to the Instructions Scene
             scene = config.Scene.PLAY;
-
+            
             changeScene();
         }
         
@@ -107,6 +126,15 @@ module scenes {
             scene = config.Scene.LEVELS;
 
             changeScene();
+        }
+        
+        // EXIT Button click event handler
+        private _exitButtonClick(event: createjs.MouseEvent) {
+            createjs.Sound.play("buttonpress");
+           
+            //window.close();    
+            var objWindow = window.open(location.href, "_self");
+            objWindow.close();
         }
 
 

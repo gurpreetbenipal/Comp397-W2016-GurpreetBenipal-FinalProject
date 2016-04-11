@@ -7,6 +7,9 @@ module scenes {
         private _sea: objects.Sea;
         private _player:objects.Player;
         
+        //PUBLIC INSTANCE VARIABLES ++++++++++++
+        public scoreboard: objects.ScoreSystem;
+        
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++
         constructor() {
             super();
@@ -16,6 +19,11 @@ module scenes {
         
         // Start Method
         public start(): void {
+            // Stop the Previous Background Music
+            createjs.Sound.stop();
+            // Generate the Background Music Infinitely
+            createjs.Sound.play("Level3Sound", { "loop": -1 });
+            
             // added Sky to the scene
             this._sea = new objects.Sea("Level3Sea");
             this.addChild(this._sea);
@@ -33,8 +41,9 @@ module scenes {
             this._player = new objects.Player();
             this.addChild(this._player);
             
-            // add the Score Board to the Game Over Scene
-           // this.addChild(play.scoreboard);
+            //added ScoreSystem to the scene
+            this.scoreboard = new objects.ScoreSystem();
+            this.addChild(this.scoreboard);
 
             // add this scene to the global stage container
             stage.addChild(this);

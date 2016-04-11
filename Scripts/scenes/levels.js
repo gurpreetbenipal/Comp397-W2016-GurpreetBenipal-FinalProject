@@ -16,8 +16,12 @@ var scenes;
         // PUBLIC METHODS +++++++++++++++++++++++
         // Start Method
         Levels.prototype.start = function () {
+            // Stop the Previous Background Music
+            createjs.Sound.stop();
+            // Generate the Background Music Infinitely
+            createjs.Sound.play("SeaWavesSound", { "loop": -1 });
             // added Sea to the scene
-            this._sea = new objects.Sea("Sea");
+            this._sea = new objects.Sea("Level1Sea");
             this.addChild(this._sea);
             //Add TITLE Label
             this._titleLabel = new objects.Label("Select Your Level", "bold 24px Cambiria", "#0033cc", config.Screen.CENTER_X, 30, true);

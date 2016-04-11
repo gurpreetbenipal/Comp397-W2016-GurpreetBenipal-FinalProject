@@ -24,7 +24,8 @@ var assetData: objects.Asset[] = [
     { id: "PlayButton", src: "../../Assets/images/PlayButton.png" },
     { id: "InstructionsButton", src: "../../Assets/images/InstructionsButton.png" },
     { id: "LevelsButton", src: "../../Assets/images/LevelsButton.png" },
-    { id: "Sea", src: "../../Assets/images/sea.png" },
+    { id: "ExitButton", src: "../../Assets/images/ExitButton.png" },
+    { id: "Level1Sea", src: "../../Assets/images/sea.png" },
     { id: "Level2Sea", src: "../../Assets/images/sea1.png" },
     { id: "Level3Sea", src: "../../Assets/images/sea2.png" },
     { id: "Level1Button", src: "../../Assets/images/Level1Button.png" },
@@ -33,11 +34,18 @@ var assetData: objects.Asset[] = [
     { id: "BackButton", src: "../../Assets/images/BackButton.png" },
     { id: "PlayAgainButton", src: "../../Assets/images/PlayAgainButton.png" },
     { id: "Fish", src: "../../Assets/images/fish.png" },
+    
     { id: "Coin", src: "../../Assets/images/Coin.png" },
     { id: "Coins", src: "../../Assets/images/coins.png" },
     { id: "CoinStack", src: "../../Assets/images/coinStack.png" },
     { id: "MoneyBag", src: "../../Assets/images/MoneyBag.png" },
     { id: "Star", src: "../../Assets/images/star.png" },
+    { id: "Stars", src: "../../Assets/images/stars.png" },
+    { id: "Crown", src: "../../Assets/images/crown.png" },
+    { id: "GoldPot", src: "../../Assets/images/goldpot.png" },
+    { id: "Eagle", src: "../../Assets/images/eagle.png" },
+    { id: "Heart", src: "../../Assets/images/heart.png" },
+    
     { id: "SeaMonster1Level1", src: "../../Assets/images/SeaMonster1Level1.png" },
     { id: "SeaMonster2Level1", src: "../../Assets/images/SeaMonster2Level1.png" },
     { id: "SeaMonster3Level1", src: "../../Assets/images/SeaMonster3Level1.png" },
@@ -53,11 +61,12 @@ var assetData: objects.Asset[] = [
     { id: "SeaMonster6Level2", src: "../../Assets/images/SeaMonster6Level2.png" },
     
     { id: "buttonpress", src: "../../Assets/audio/buttonpress.wav" },
-    { id: "gamestartsound", src: "../../Assets/audio/gamestart.wav" },
-    { id: "nightplaysound", src: "../../Assets/audio/gamesound.wav" },
-    { id: "dayplaysound", src: "../../Assets/audio/playsound.mp3" },
     { id: "firehit", src: "../../Assets/audio/firehit.wav" },
     { id: "pickupitem", src: "../../Assets/audio/pickupitem.wav" },
+    { id: "SeaWavesSound", src: "../../Assets/audio/seawaves.wav" },
+    { id: "Level1Sound", src: "../../Assets/audio/level1sound.wav" },
+    { id: "Level2Sound", src: "../../Assets/audio/level2sound.mp3" },
+    { id: "Level3Sound", src: "../../Assets/audio/level3sound.mp3" },
 ];
 
 function preload() {
@@ -129,11 +138,11 @@ function changeScene(): void {
             console.log("Starting MENU Scene");
             break;
         case config.Scene.PLAY:
-            // show the PLAY scene
+            // show the LEVEL1 scene
             stage.removeAllChildren();
-            play = new scenes.Play();
-            currentScene = play;
-            console.log("Starting PLAY Scene");
+            level1 = new scenes.Level1();
+            currentScene = level1;
+            console.log("Starting LEVEL 1 Scene");
             break;
         case config.Scene.END:
             // show the END scene
@@ -150,7 +159,7 @@ function changeScene(): void {
             console.log("Starting LEVELS Scene");
             break;
          case config.Scene.LEVEL1:
-            // show the LEVELS scene
+            // show the LEVEL1 scene
             stage.removeAllChildren();
             level1 = new scenes.Level1();
             currentScene = level1;

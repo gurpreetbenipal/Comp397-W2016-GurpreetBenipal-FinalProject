@@ -23,6 +23,11 @@ module scenes {
         
         // Start Method
         public start(): void {
+            // Stop the Previous Background Music
+            createjs.Sound.stop();
+            // Generate the Background Music Infinitely
+            createjs.Sound.play("Level1Sound", { "loop": -1 });
+            
             //Set the SeaMonster Count
             this._seamonsterCount = 2;
             
@@ -30,7 +35,7 @@ module scenes {
             this._seamonsters = new Array<objects.SeaMonsterLevel1>();
             
             // added Sea to the scene
-            this._sea = new objects.Sea("Sea");
+            this._sea = new objects.Sea("Level1Sea");
             this.addChild(this._sea);
             
             //Add TITLE Label
@@ -43,7 +48,7 @@ module scenes {
             this.addChild(this._titleLabel);
             
              // added Item to the scene
-            this._item = new objects.Item("Coin");
+            this._item = new objects.Item("Coin","level1");
             this.addChild(this._item);
             
             // added Player to the scene

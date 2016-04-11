@@ -16,8 +16,14 @@ module scenes {
         
         // Start Method
         public start(): void {
+            // Stop the Previous Background Music
+            createjs.Sound.stop();
+            
+            // Generate the Background Music Infinitely
+            createjs.Sound.play("SeaWavesSound", { "loop": -1 });
+            
             // added Sea to the scene
-            this._sea = new objects.Sea("Sea");
+            this._sea = new objects.Sea("Level1Sea");
             this.addChild(this._sea);
             
             //Add GAME OVER Label

@@ -175,7 +175,7 @@ module managers {
                     this._player.image = assets.getResult("");
 
                     setTimeout(() => {
-                        // Reset (Hide) the explosion image after half second
+                       // Reset (Hide) the explosion image after half second
                        // play.explosion.reset(this._player.y - playerHalfHeight);
                         
                         // Show the player image

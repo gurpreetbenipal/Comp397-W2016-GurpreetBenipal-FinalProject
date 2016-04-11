@@ -16,6 +16,10 @@ var scenes;
         // PUBLIC METHODS +++++++++++++++++++++++++++++++++
         // Start Method
         Level3.prototype.start = function () {
+            // Stop the Previous Background Music
+            createjs.Sound.stop();
+            // Generate the Background Music Infinitely
+            createjs.Sound.play("Level3Sound", { "loop": -1 });
             // added Sky to the scene
             this._sea = new objects.Sea("Level3Sea");
             this.addChild(this._sea);
@@ -25,8 +29,9 @@ var scenes;
             // added Player to the scene
             this._player = new objects.Player();
             this.addChild(this._player);
-            // add the Score Board to the Game Over Scene
-            // this.addChild(play.scoreboard);
+            //added ScoreSystem to the scene
+            this.scoreboard = new objects.ScoreSystem();
+            this.addChild(this.scoreboard);
             // add this scene to the global stage container
             stage.addChild(this);
         };

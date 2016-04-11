@@ -16,8 +16,12 @@ var scenes;
         // PUBLIC METHODS +++++++++++++++++++++++++++++++++
         // Start Method
         End.prototype.start = function () {
+            // Stop the Previous Background Music
+            createjs.Sound.stop();
+            // Generate the Background Music Infinitely
+            createjs.Sound.play("SeaWavesSound", { "loop": -1 });
             // added Sea to the scene
-            this._sea = new objects.Sea("Sea");
+            this._sea = new objects.Sea("Level1Sea");
             this.addChild(this._sea);
             //Add GAME OVER Label
             this._gameoverLabel = new objects.Label("GAME OVER !", "bold 60px Cambiria", "#990000", config.Screen.CENTER_X + 20, config.Screen.CENTER_Y - 40, true);
