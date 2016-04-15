@@ -36,17 +36,17 @@ var managers;
                 }
                 // check if it's a Dragon hit
                 if (object.name === "seamonster" && object.isHit === false) {
-                    createjs.Sound.play("firehit"); // Generate the explosion sound
-                    // Update the explosion image
-                    // play.explosion.update(this._player.y - playerHalfHeight);
+                    createjs.Sound.play("MonsterEatFish"); // Generate the explosion sound
+                    //Update the explosion image
+                    level1.explosion.update(this._player.y - playerHalfHeight);
                     // Hides the player image
                     this._player.image = assets.getResult("");
                     setTimeout(function () {
                         // Reset (Hide) the explosion image after half second
-                        // play.explosion.reset(this._player.y - playerHalfHeight);
+                        level1.explosion.reset(_this._player.y - playerHalfHeight);
                         // Show the player image
                         _this._player.image = assets.getResult("Fish");
-                    }, 500);
+                    }, 900);
                     console.log("Sea Monster hit!");
                     object.isHit = true; // Make the isHit true, when dragon hits the player
                     level1.scoreboard.lives--; //Decrease the Player Lives by 1
@@ -89,17 +89,17 @@ var managers;
                 }
                 // check if it's a Dragon hit
                 if (object.name === "seamonster" && object.isHit === false) {
-                    createjs.Sound.play("firehit"); // Generate the explosion sound
+                    createjs.Sound.play("MonsterEatFish"); // Generate the explosion sound
                     // Update the explosion image
-                    // play.explosion.update(this._player.y - playerHalfHeight);
+                    level2.explosion.update(this._player.y - playerHalfHeight);
                     // Hides the player image
                     this._player.image = assets.getResult("");
                     setTimeout(function () {
                         // Reset (Hide) the explosion image after half second
-                        // play.explosion.reset(this._player.y - playerHalfHeight);
+                        level2.explosion.reset(_this._player.y - playerHalfHeight);
                         // Show the player image
                         _this._player.image = assets.getResult("Fish");
-                    }, 500);
+                    }, 900);
                     console.log("Sea Monster hit!");
                     object.isHit = true; // Make the isHit true, when dragon hits the player
                     level2.scoreboard.lives--; //Decrease the Player Lives by 1
@@ -142,7 +142,7 @@ var managers;
                 }
                 // check if it's a Dragon hit
                 if (object.name === "seamonster" && object.isHit === false) {
-                    createjs.Sound.play("firehit"); // Generate the explosion sound
+                    createjs.Sound.play("MonsterEatFish"); // Generate the explosion sound
                     // Update the explosion image
                     // play.explosion.update(this._player.y - playerHalfHeight);
                     // Hides the player image

@@ -114,9 +114,9 @@ module scenes {
         private _instructionsButtonClick(event: createjs.MouseEvent) {
             createjs.Sound.play("buttonpress");
             // Switch to the Instructions Scene
-            scene = config.Scene.PLAY;
+            //scene = config.Scene.PLAY;
             
-            changeScene();
+            //changeScene();
         }
         
          // LEVELS Button click event handler
@@ -131,10 +131,9 @@ module scenes {
         // EXIT Button click event handler
         private _exitButtonClick(event: createjs.MouseEvent) {
             createjs.Sound.play("buttonpress");
-           
-            //window.close();    
-            var objWindow = window.open(location.href, "_self");
-            objWindow.close();
+            window.close();    
+            //var objWindow = window.open(location.href, "_self");
+            //objWindow.close();
         }
 
 

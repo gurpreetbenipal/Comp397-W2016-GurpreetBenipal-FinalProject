@@ -36,6 +36,9 @@ var scenes;
             // added Player to the scene
             this._player = new objects.Player();
             this.addChild(this._player);
+            //added Explosion to the scene
+            this.explosion = new objects.Explosion();
+            this.addChild(this.explosion);
             // added SeaMonsters to the scene
             for (var seamonster = 0; seamonster < this._seamonsterCount; seamonster++) {
                 this._seamonsters[seamonster] = new objects.SeaMonsterLevel1("SeaMonster1Level1");

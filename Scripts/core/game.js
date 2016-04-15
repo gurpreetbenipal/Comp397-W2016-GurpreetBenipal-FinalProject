@@ -52,6 +52,14 @@ var assetData = [
     { id: "SeaMonster4Level2", src: "../../Assets/images/SeaMonster4Level2.png" },
     { id: "SeaMonster5Level2", src: "../../Assets/images/SeaMonster5Level2.png" },
     { id: "SeaMonster6Level2", src: "../../Assets/images/SeaMonster6Level2.png" },
+    { id: "Blood1", src: "../../Assets/images/blood1.png" },
+    { id: "Blood2", src: "../../Assets/images/blood2.png" },
+    { id: "Blood3", src: "../../Assets/images/blood3.png" },
+    { id: "Blood4", src: "../../Assets/images/blood4.png" },
+    { id: "Blood5", src: "../../Assets/images/blood5.png" },
+    { id: "Blood6", src: "../../Assets/images/blood6.png" },
+    { id: "Blood7", src: "../../Assets/images/blood7.png" },
+    { id: "Blood8", src: "../../Assets/images/blood8.png" },
     { id: "buttonpress", src: "../../Assets/audio/buttonpress.wav" },
     { id: "firehit", src: "../../Assets/audio/firehit.wav" },
     { id: "pickupitem", src: "../../Assets/audio/pickupitem.wav" },
@@ -59,6 +67,7 @@ var assetData = [
     { id: "Level1Sound", src: "../../Assets/audio/level1sound.wav" },
     { id: "Level2Sound", src: "../../Assets/audio/level2sound.mp3" },
     { id: "Level3Sound", src: "../../Assets/audio/level3sound.mp3" },
+    { id: "MonsterEatFish", src: "../../Assets/audio/monstereatfish.wav" },
 ];
 function preload() {
     assets = new createjs.LoadQueue();

@@ -4,6 +4,7 @@
 
 /// <reference path="../objects/sea.ts" />
 /// <reference path="../objects/player.ts" />
+/// <reference path="../objects/explosion.ts" />
 /// <reference path="../objects/item.ts" />
 /// <reference path="../objects/seamonsterLevel1.ts" />
 /// <reference path="../objects/seamonsterLevel2.ts" />

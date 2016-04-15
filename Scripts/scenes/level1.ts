@@ -13,6 +13,7 @@ module scenes {
         
         //PUBLIC INSTANCE VARIABLES ++++++++++++
         public scoreboard: objects.ScoreSystem;
+        public explosion: objects.Explosion;
         
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++
         constructor() {
@@ -54,6 +55,10 @@ module scenes {
             // added Player to the scene
             this._player = new objects.Player();
             this.addChild(this._player);
+            
+             //added Explosion to the scene
+            this.explosion = new objects.Explosion();
+            this.addChild(this.explosion);
             
              // added SeaMonsters to the scene
             for (var seamonster: number = 0; seamonster < this._seamonsterCount; seamonster++) {

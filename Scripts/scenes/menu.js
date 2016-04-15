@@ -69,8 +69,8 @@ var scenes;
         Menu.prototype._instructionsButtonClick = function (event) {
             createjs.Sound.play("buttonpress");
             // Switch to the Instructions Scene
-            scene = config.Scene.PLAY;
-            changeScene();
+            //scene = config.Scene.PLAY;
+            //changeScene();
         };
         // LEVELS Button click event handler
         Menu.prototype._levelsButtonClick = function (event) {
@@ -82,9 +82,9 @@ var scenes;
         // EXIT Button click event handler
         Menu.prototype._exitButtonClick = function (event) {
             createjs.Sound.play("buttonpress");
-            //window.close();    
-            var objWindow = window.open(location.href, "_self");
-            objWindow.close();
+            window.close();
+            //var objWindow = window.open(location.href, "_self");
+            //objWindow.close();
         };
         return Menu;
     })(objects.Scene);
