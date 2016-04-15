@@ -20,29 +20,32 @@ var objects;
             this.y = player_Y; // Y coordinate of the explosion will be same as the Player's Y coordinate
             this.image = assets.getResult("Blood1"); // Display the explosion image
             setTimeout(function () {
-                _this.image = assets.getResult("Blood1");
+                _this.image = assets.getResult("FishDestroy1");
             }, 100);
             setTimeout(function () {
-                _this.image = assets.getResult("Blood2");
+                _this.image = assets.getResult("FishDestroy2");
             }, 200);
             setTimeout(function () {
-                _this.image = assets.getResult("Blood3");
+                _this.image = assets.getResult("FishDestroy3");
             }, 300);
             setTimeout(function () {
-                _this.image = assets.getResult("Blood4");
+                _this.image = assets.getResult("FishDestroy4");
             }, 400);
             setTimeout(function () {
-                _this.image = assets.getResult("Blood5");
+                _this.image = assets.getResult("FishDestroy5");
             }, 500);
             setTimeout(function () {
-                _this.image = assets.getResult("Blood6");
+                _this.image = assets.getResult("FishDestroy6");
             }, 600);
             setTimeout(function () {
-                _this.image = assets.getResult("Blood7");
+                _this.image = assets.getResult("FishDestroy7");
             }, 700);
             setTimeout(function () {
-                _this.image = assets.getResult("Blood8");
+                _this.image = assets.getResult("FishDestroy8");
             }, 800);
+            setTimeout(function () {
+                _this.image = assets.getResult("FishDestroy9");
+            }, 900);
         };
         Explosion.prototype.reset = function (player_Y) {
             this.x = 10;

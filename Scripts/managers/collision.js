@@ -46,7 +46,7 @@ var managers;
                         level1.explosion.reset(_this._player.y - playerHalfHeight);
                         // Show the player image
                         _this._player.image = assets.getResult("Fish");
-                    }, 900);
+                    }, 1000);
                     console.log("Sea Monster hit!");
                     object.isHit = true; // Make the isHit true, when dragon hits the player
                     level1.scoreboard.lives--; //Decrease the Player Lives by 1
@@ -99,7 +99,7 @@ var managers;
                         level2.explosion.reset(_this._player.y - playerHalfHeight);
                         // Show the player image
                         _this._player.image = assets.getResult("Fish");
-                    }, 900);
+                    }, 1000);
                     console.log("Sea Monster hit!");
                     object.isHit = true; // Make the isHit true, when dragon hits the player
                     level2.scoreboard.lives--; //Decrease the Player Lives by 1

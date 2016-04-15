@@ -16,29 +16,32 @@ module objects {
             this.image = assets.getResult("Blood1");   // Display the explosion image
             
             setTimeout(() => {
-                        this.image = assets.getResult("Blood1");
+                        this.image = assets.getResult("FishDestroy1");
                     }, 100);
             setTimeout(() => {
-                        this.image = assets.getResult("Blood2");
+                        this.image = assets.getResult("FishDestroy2");
                     }, 200);
             setTimeout(() => {
-                        this.image = assets.getResult("Blood3");
+                        this.image = assets.getResult("FishDestroy3");
                     }, 300);
             setTimeout(() => {
-                        this.image = assets.getResult("Blood4");
+                        this.image = assets.getResult("FishDestroy4");
                     }, 400);
             setTimeout(() => {
-                        this.image = assets.getResult("Blood5");
+                        this.image = assets.getResult("FishDestroy5");
                     }, 500);
             setTimeout(() => {
-                        this.image = assets.getResult("Blood6");
+                        this.image = assets.getResult("FishDestroy6");
                     }, 600);
             setTimeout(() => {
-                        this.image = assets.getResult("Blood7");
+                        this.image = assets.getResult("FishDestroy7");
                     }, 700);
             setTimeout(() => {
-                        this.image = assets.getResult("Blood8");
+                        this.image = assets.getResult("FishDestroy8");
                     }, 800);
+            setTimeout(() => {
+                        this.image = assets.getResult("FishDestroy9");
+                    }, 900);
         }
 
         public reset(player_Y: number): void {

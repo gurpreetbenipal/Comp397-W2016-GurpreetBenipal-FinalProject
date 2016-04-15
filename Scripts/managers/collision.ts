@@ -54,7 +54,7 @@ module managers {
                         
                         // Show the player image
                         this._player.image = assets.getResult("Fish");
-                    }, 900);
+                    }, 1000);
 
                     console.log("Sea Monster hit!");
                     object.isHit = true;                            // Make the isHit true, when dragon hits the player
@@ -118,7 +118,7 @@ module managers {
                         
                         // Show the player image
                         this._player.image = assets.getResult("Fish");
-                    }, 900);
+                    }, 1000);
 
                     console.log("Sea Monster hit!");
                     object.isHit = true;                            // Make the isHit true, when dragon hits the player
