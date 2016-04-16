@@ -24,7 +24,7 @@ var scenes;
             this._sea = new objects.Sea("Level3Sea");
             this.addChild(this._sea);
             //Add TITLE Label
-            this._titleLabel = new objects.Label("LEVEL 3", "bold 26px CONSOLAS", "#0033cc", config.Screen.CENTER_X, 30, true);
+            this._titleLabel = new objects.Label("LEVEL 3", "bold 26px CONSOLAS", "#F0333c", config.Screen.CENTER_X, 30, true);
             this.addChild(this._titleLabel);
             // added Item to the scene
             this._item = new objects.Item("Shell", "level3");
@@ -32,6 +32,9 @@ var scenes;
             // added Player to the scene
             this._player = new objects.Player();
             this.addChild(this._player);
+            // added SeaMonster to the scene
+            this._seamonster = new objects.SeaMonsterLevel3();
+            this.addChild(this._seamonster);
             //added ScoreSystem to the scene
             this.scoreboard = new objects.ScoreSystem();
             this.addChild(this.scoreboard);
@@ -43,6 +46,7 @@ var scenes;
             this._sea.update();
             this._player.update();
             this._item.update();
+            this._seamonster.update();
         };
         return Level3;
     })(objects.Scene);

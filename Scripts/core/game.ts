@@ -29,8 +29,8 @@ var assetData: objects.Asset[] = [
     { id: "InstructionsBG", src: "../../Assets/images/instructionsBG.png" },
     { id: "CommonBackground", src: "../../Assets/images/sea.png" },
     { id: "Level1Sea", src: "../../Assets/images/sea1.png" },
-    { id: "Level2Sea", src: "../../Assets/images/bg1.jpg" },
-    { id: "Level3Sea", src: "../../Assets/images/bg2.png" },
+    { id: "Level2Sea", src: "../../Assets/images/bg2.png" },
+    { id: "Level3Sea", src: "../../Assets/images/bg1.jpg" },
     { id: "Level1Button", src: "../../Assets/images/Level1Button.png" },
     { id: "Level2Button", src: "../../Assets/images/Level2Button.png" },
     { id: "Level3Button", src: "../../Assets/images/Level3Button.png" },
@@ -72,6 +72,8 @@ var assetData: objects.Asset[] = [
     { id: "SeaMonster4Level2", src: "../../Assets/images/SeaMonster4Level2.png" },
     { id: "SeaMonster5Level2", src: "../../Assets/images/SeaMonster5Level2.png" },
     { id: "SeaMonster6Level2", src: "../../Assets/images/SeaMonster6Level2.png" },
+    
+    { id: "SeaMonster1Level3", src: "../../Assets/images/WaterDragon1Level3.png" },
 
     { id: "FishDestroy1", src: "../../Assets/images/fishdestroy1.png" },
     { id: "FishDestroy2", src: "../../Assets/images/fishdestroy2.png" },

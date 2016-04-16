@@ -7,6 +7,7 @@ module scenes {
         private _sea: objects.Sea;
         private _player:objects.Player;
         private _item: objects.Item;
+        private _seamonster: objects.SeaMonsterLevel3;
         
         //PUBLIC INSTANCE VARIABLES ++++++++++++
         public scoreboard: objects.ScoreSystem;
@@ -33,7 +34,7 @@ module scenes {
             this._titleLabel = new objects.Label(
                 "LEVEL 3",
                 "bold 26px CONSOLAS",
-                "#0033cc",
+                "#F0333c",
                 config.Screen.CENTER_X,
                 30, true);
             this.addChild(this._titleLabel);
@@ -45,6 +46,10 @@ module scenes {
             // added Player to the scene
             this._player = new objects.Player();
             this.addChild(this._player);
+            
+            // added SeaMonster to the scene
+            this._seamonster= new objects.SeaMonsterLevel3();
+            this.addChild(this._seamonster);
             
             //added ScoreSystem to the scene
             this.scoreboard = new objects.ScoreSystem();
@@ -59,6 +64,7 @@ module scenes {
             this._sea.update();
             this._player.update();
             this._item.update();
+            this._seamonster.update();
         }
         
         
