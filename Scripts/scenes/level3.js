@@ -24,8 +24,11 @@ var scenes;
             this._sea = new objects.Sea("Level3Sea");
             this.addChild(this._sea);
             //Add TITLE Label
-            this._titleLabel = new objects.Label("LEVEL 3", "bold 24px Cambiria", "#0033cc", config.Screen.CENTER_X, 30, true);
+            this._titleLabel = new objects.Label("LEVEL 3", "bold 26px CONSOLAS", "#0033cc", config.Screen.CENTER_X, 30, true);
             this.addChild(this._titleLabel);
+            // added Item to the scene
+            this._item = new objects.Item("Shell", "level3");
+            this.addChild(this._item);
             // added Player to the scene
             this._player = new objects.Player();
             this.addChild(this._player);
@@ -39,6 +42,7 @@ var scenes;
         Level3.prototype.update = function () {
             this._sea.update();
             this._player.update();
+            this._item.update();
         };
         return Level3;
     })(objects.Scene);

@@ -11,6 +11,7 @@ var scene;
 var menu;
 var play;
 var end;
+var instructions;
 var levels;
 var level1;
 var level2;
@@ -21,15 +22,22 @@ var assetData = [
     { id: "InstructionsButton", src: "../../Assets/images/InstructionsButton.png" },
     { id: "LevelsButton", src: "../../Assets/images/LevelsButton.png" },
     { id: "ExitButton", src: "../../Assets/images/ExitButton.png" },
-    { id: "Level1Sea", src: "../../Assets/images/sea.png" },
-    { id: "Level2Sea", src: "../../Assets/images/sea1.png" },
-    { id: "Level3Sea", src: "../../Assets/images/sea2.png" },
+    { id: "InstructionsBG", src: "../../Assets/images/instructionsBG.png" },
+    { id: "CommonBackground", src: "../../Assets/images/sea.png" },
+    { id: "Level1Sea", src: "../../Assets/images/sea1.png" },
+    { id: "Level2Sea", src: "../../Assets/images/bg1.jpg" },
+    { id: "Level3Sea", src: "../../Assets/images/bg2.png" },
     { id: "Level1Button", src: "../../Assets/images/Level1Button.png" },
     { id: "Level2Button", src: "../../Assets/images/Level2Button.png" },
     { id: "Level3Button", src: "../../Assets/images/Level3Button.png" },
     { id: "BackButton", src: "../../Assets/images/BackButton.png" },
+    { id: "NextButton", src: "../../Assets/images/NextButton.png" },
     { id: "PlayAgainButton", src: "../../Assets/images/PlayAgainButton.png" },
     { id: "Fish", src: "../../Assets/images/player.png" },
+    { id: "Fish1", src: "../../Assets/images/player1.png" },
+    { id: "Level1Instructions", src: "../../Assets/images/Level1Instructions.png" },
+    { id: "Level2Instructions", src: "../../Assets/images/Level2Instructions.png" },
+    { id: "Level3Instructions", src: "../../Assets/images/Level3Instructions.png" },
     { id: "Coin", src: "../../Assets/images/Coin.png" },
     { id: "Coins", src: "../../Assets/images/coins.png" },
     { id: "CoinStack", src: "../../Assets/images/coinStack.png" },
@@ -40,6 +48,8 @@ var assetData = [
     { id: "GoldPot", src: "../../Assets/images/goldpot.png" },
     { id: "Eagle", src: "../../Assets/images/eagle.png" },
     { id: "Heart", src: "../../Assets/images/heart.png" },
+    { id: "Shell", src: "../../Assets/images/shell.png" },
+    { id: "Ring", src: "../../Assets/images/ring.png" },
     { id: "SeaMonster1Level1", src: "../../Assets/images/SeaMonster1Level1.png" },
     { id: "SeaMonster2Level1", src: "../../Assets/images/SeaMonster2Level1.png" },
     { id: "SeaMonster3Level1", src: "../../Assets/images/SeaMonster3Level1.png" },
@@ -65,9 +75,9 @@ var assetData = [
     { id: "firehit", src: "../../Assets/audio/firehit.wav" },
     { id: "pickupitem", src: "../../Assets/audio/pickupitem.wav" },
     { id: "SeaWavesSound", src: "../../Assets/audio/seawaves.wav" },
-    { id: "Level1Sound", src: "../../Assets/audio/level1sound.wav" },
-    { id: "Level2Sound", src: "../../Assets/audio/level2sound.mp3" },
-    { id: "Level3Sound", src: "../../Assets/audio/level3sound.mp3" },
+    { id: "Level1Sound", src: "../../Assets/audio/level1Sound.wav" },
+    { id: "Level2Sound", src: "../../Assets/audio/level2Sound.wav" },
+    { id: "Level3Sound", src: "../../Assets/audio/level3Sound.mp3" },
     { id: "MonsterEatFish", src: "../../Assets/audio/monstereatfish.wav" },
 ];
 function preload() {
@@ -137,6 +147,13 @@ function changeScene() {
             end = new scenes.End();
             currentScene = end;
             console.log("Starting END Scene");
+            break;
+        case config.Scene.INSTRCUTIONS:
+            // show the INSTRCUTIONS scene
+            stage.removeAllChildren();
+            instructions = new scenes.Instructions();
+            currentScene = instructions;
+            console.log("Starting INSTRCUTIONS Scene");
             break;
         case config.Scene.LEVELS:
             // show the LEVELS scene

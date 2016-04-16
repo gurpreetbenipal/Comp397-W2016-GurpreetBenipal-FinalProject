@@ -42,25 +42,25 @@ module scenes {
             //Add TITLE Label
             this._titleLabel = new objects.Label(
                 "LEVEL 1",
-                "bold 24px Cambiria",
+                "bold 26px CONSOLAS",
                 "#0033cc",
                 config.Screen.CENTER_X,
                 30, true);
             this.addChild(this._titleLabel);
             
-             // added Item to the scene
-            this._item = new objects.Item("Coin","level1");
+            // added Item to the scene
+            this._item = new objects.Item("Coin", "level1");
             this.addChild(this._item);
             
             // added Player to the scene
             this._player = new objects.Player();
             this.addChild(this._player);
             
-             //added Explosion to the scene
+            //added Explosion to the scene
             this.explosion = new objects.Explosion();
             this.addChild(this.explosion);
             
-             // added SeaMonsters to the scene
+            // added SeaMonsters to the scene
             for (var seamonster: number = 0; seamonster < this._seamonsterCount; seamonster++) {
                 this._seamonsters[seamonster] = new objects.SeaMonsterLevel1("SeaMonster1Level1");
                 this.addChild(this._seamonsters[seamonster]);
@@ -71,7 +71,7 @@ module scenes {
             this.scoreboard = new objects.ScoreSystem();
             this.addChild(this.scoreboard);
            
-           // added Collision Manager to the scene
+            // added Collision Manager to the scene
             this._collision = new managers.Collision(this._player);
 
             // add this scene to the global stage container
@@ -83,7 +83,7 @@ module scenes {
             this._sea.update();
             this._player.update();
             this._item.update();
-            
+
             this._seamonsters.forEach(seamonster => {
                 seamonster.update();
                 // Check the Collision with SEAMONSTER

@@ -23,13 +23,13 @@ module scenes {
             createjs.Sound.play("SeaWavesSound", { "loop": -1 });
             
             // added Sea to the scene
-            this._sea = new objects.Sea("Level1Sea");
+            this._sea = new objects.Sea("CommonBackground");
             this.addChild(this._sea);
             
             //Add GAME OVER Label
             this._gameoverLabel = new objects.Label(
                 "GAME OVER !",
-                "bold 60px Cambiria",
+                "bold 60px CONSOLAS",
                 "#990000",
                 config.Screen.CENTER_X + 20, config.Screen.CENTER_Y - 40, true);
             this.addChild(this._gameoverLabel);

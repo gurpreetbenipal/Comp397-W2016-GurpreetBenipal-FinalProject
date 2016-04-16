@@ -17,8 +17,8 @@ module scenes {
         
         // Start Method
         public start(): void {
-            
-           
+
+
 
             stage.addChild(this);
 
@@ -26,7 +26,7 @@ module scenes {
 
         // PLAY Scene updates here
         public update(): void {
-           
+
         }
     }
 }

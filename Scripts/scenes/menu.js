@@ -23,10 +23,10 @@ var scenes;
             createjs.Sound.play("SeaWavesSound", { "loop": -1 });
             scores = 0;
             // added Sea to the scene
-            this._sea = new objects.Sea("Level1Sea");
+            this._sea = new objects.Sea("CommonBackground");
             this.addChild(this._sea);
             //Add WELCOME Label
-            this._welcomeLabel = new objects.Label("WELCOME TO 'THE SEA WORLD'", "bold 24px Cambiria", "#0033cc", config.Screen.CENTER_X + 30, 30, true);
+            this._welcomeLabel = new objects.Label("WELCOME TO 'THE SEA WORLD'", "bold 26px CONSOLAS", "#0033cc", config.Screen.CENTER_X + 30, 30, true);
             this.addChild(this._welcomeLabel);
             // add the PLAY button to the MENU scene
             this._playButton = new objects.Button("PlayButton", config.Screen.CENTER_X, config.Screen.CENTER_Y - 100, true);
@@ -69,8 +69,8 @@ var scenes;
         Menu.prototype._instructionsButtonClick = function (event) {
             createjs.Sound.play("buttonpress");
             // Switch to the Instructions Scene
-            //scene = config.Scene.PLAY;
-            //changeScene();
+            scene = config.Scene.INSTRCUTIONS;
+            changeScene();
         };
         // LEVELS Button click event handler
         Menu.prototype._levelsButtonClick = function (event) {
@@ -85,6 +85,7 @@ var scenes;
             window.close();
             //var objWindow = window.open(location.href, "_self");
             //objWindow.close();
+            open(location.href, '_self').close();
         };
         return Menu;
     })(objects.Scene);

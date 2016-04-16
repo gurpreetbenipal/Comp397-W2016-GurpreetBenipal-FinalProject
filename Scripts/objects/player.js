@@ -18,6 +18,7 @@ var objects;
             this._topBounds = this.height * 0.5;
             this._bottomBounds = config.Screen.HEIGHT - (this.height * 0.5);
             this.x = 64;
+            //this._fishNumber=1;
         }
         //PRIVATE METHODS
         Player.prototype._checkBounds = function () {
@@ -30,8 +31,10 @@ var objects;
         };
         //PUBLIC METHODS
         Player.prototype.update = function () {
+            //this.image = (this._fishNumber==1)?assets.getResult("Fish"):assets.getResult("Fish1");
             this.y = stage.mouseY;
             this._checkBounds();
+            //this._fishNumber= (this._fishNumber==1)?2:1;
         };
         return Player;
     })(createjs.Bitmap);

@@ -43,14 +43,14 @@ module scenes {
             //Add TITLE Label2
             this._titleLabel = new objects.Label(
                 "LEVEL 2",
-                "bold 24px Cambiria",
+                "bold 26px CONSOLAS",
                 "#0033cc",
                 config.Screen.CENTER_X,
                 30, true);
             this.addChild(this._titleLabel);
             
-             // added Item to the scene
-            this._item = new objects.Item("Coin","level2");
+            // added Item to the scene
+            this._item = new objects.Item("Coin", "level2");
             this.addChild(this._item);
             
             // added Player to the scene
@@ -67,7 +67,7 @@ module scenes {
                 this.addChild(this._seamonsters[seamonster]);
             }
            
-           //added ScoreSystem to the scene
+            //added ScoreSystem to the scene
             this.scoreboard = new objects.ScoreSystem();
             this.addChild(this.scoreboard);
 
@@ -83,7 +83,7 @@ module scenes {
             this._sea.update();
             this._player.update();
             this._item.update();
-            
+
             this._seamonsters.forEach(seamonster => {
                 seamonster.update();
                 // Check the Collision with SEAMONSTER

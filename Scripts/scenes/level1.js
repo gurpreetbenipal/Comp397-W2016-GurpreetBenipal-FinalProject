@@ -28,7 +28,7 @@ var scenes;
             this._sea = new objects.Sea("Level1Sea");
             this.addChild(this._sea);
             //Add TITLE Label
-            this._titleLabel = new objects.Label("LEVEL 1", "bold 24px Cambiria", "#0033cc", config.Screen.CENTER_X, 30, true);
+            this._titleLabel = new objects.Label("LEVEL 1", "bold 26px CONSOLAS", "#0033cc", config.Screen.CENTER_X, 30, true);
             this.addChild(this._titleLabel);
             // added Item to the scene
             this._item = new objects.Item("Coin", "level1");

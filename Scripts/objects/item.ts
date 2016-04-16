@@ -74,10 +74,10 @@ module objects {
             {
                 switch (randomNumber) {
                     case 1:
-                        this.image = assets.getResult("Coin");
+                        this.image = assets.getResult("Shell");
                         break;
                     case 2:
-                        this.image = assets.getResult("Coins");
+                        this.image = assets.getResult("Ring");
                         break;
                     case 3:
                         this.image = assets.getResult("CoinStack");

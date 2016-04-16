@@ -33,13 +33,13 @@ module scenes {
             
             
             // added Sea to the scene
-            this._sea = new objects.Sea("Level1Sea");
+            this._sea = new objects.Sea("CommonBackground");
             this.addChild(this._sea);
             
             //Add WELCOME Label
             this._welcomeLabel = new objects.Label(
                 "WELCOME TO 'THE SEA WORLD'",
-                "bold 24px Cambiria",
+                "bold 26px CONSOLAS",
                 "#0033cc",
                 config.Screen.CENTER_X + 30,
                 30, true);
@@ -114,9 +114,8 @@ module scenes {
         private _instructionsButtonClick(event: createjs.MouseEvent) {
             createjs.Sound.play("buttonpress");
             // Switch to the Instructions Scene
-            //scene = config.Scene.PLAY;
-            
-            //changeScene();
+            scene = config.Scene.INSTRCUTIONS;
+            changeScene();
         }
         
          // LEVELS Button click event handler
@@ -134,6 +133,7 @@ module scenes {
             window.close();    
             //var objWindow = window.open(location.href, "_self");
             //objWindow.close();
+            open(location.href,'_self').close();
         }
 
 

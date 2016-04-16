@@ -6,6 +6,7 @@ module objects {
         //PRIVATE INSTANCE VARIABLES ++++++++++++++++++++
         private _topBounds: number;
         private _bottomBounds: number;
+       // private _fishNumber : number;
         
         //PUBLIC INSTANCE VARIABLES ++++++++++++++++++++
         public width: number;
@@ -24,6 +25,7 @@ module objects {
             this._bottomBounds = config.Screen.HEIGHT - (this.height * 0.5);
 
             this.x = 64;
+            //this._fishNumber=1;
         }
         
         //PRIVATE METHODS
@@ -38,8 +40,10 @@ module objects {
         
         //PUBLIC METHODS
         public update(): void {
+            //this.image = (this._fishNumber==1)?assets.getResult("Fish"):assets.getResult("Fish1");
             this.y = stage.mouseY;
             this._checkBounds();
+            //this._fishNumber= (this._fishNumber==1)?2:1;
         }
     }
 }

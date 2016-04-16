@@ -6,6 +6,7 @@ module scenes {
         private _titleLabel: objects.Label;
         private _sea: objects.Sea;
         private _player:objects.Player;
+        private _item: objects.Item;
         
         //PUBLIC INSTANCE VARIABLES ++++++++++++
         public scoreboard: objects.ScoreSystem;
@@ -31,11 +32,15 @@ module scenes {
             //Add TITLE Label
             this._titleLabel = new objects.Label(
                 "LEVEL 3",
-                "bold 24px Cambiria",
+                "bold 26px CONSOLAS",
                 "#0033cc",
                 config.Screen.CENTER_X,
                 30, true);
             this.addChild(this._titleLabel);
+            
+            // added Item to the scene
+            this._item = new objects.Item("Shell", "level3");
+            this.addChild(this._item);
             
             // added Player to the scene
             this._player = new objects.Player();
@@ -53,6 +58,7 @@ module scenes {
         public update(): void {
             this._sea.update();
             this._player.update();
+            this._item.update();
         }
         
         

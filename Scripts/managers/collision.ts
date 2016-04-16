@@ -31,26 +31,25 @@ module managers {
                     console.log("Item Picked!");
                     object.image = assets.getResult("");            // Hide the Item
                     scores += 100;               // Increment the player score by 100
-                    if(scores >= 2000)
-                        {
-                            // Switch to the LEVEL2 Scene
-                            scene = config.Scene.LEVEL2;   
-                            changeScene();                          // Change the scene to LEVEL2 Scene                         
-                        }
+                    if (scores >= 2000) {
+                        // Switch to the LEVEL2 Scene
+                        scene = config.Scene.LEVEL2;
+                        changeScene();                          // Change the scene to LEVEL2 Scene                         
+                    }
                 }
                 
                 // check if it's a Dragon hit
                 if (object.name === "seamonster" && object.isHit === false) {
                     createjs.Sound.play("MonsterEatFish");                         // Generate the explosion sound
                     //Update the explosion image
-                      level1.explosion.update(this._player.y - playerHalfHeight);
+                    level1.explosion.update(this._player.y - playerHalfHeight);
                     
                     // Hides the player image
                     this._player.image = assets.getResult("");
 
                     setTimeout(() => {
                         // Reset (Hide) the explosion image after half second
-                       level1.explosion.reset(this._player.y - playerHalfHeight);
+                        level1.explosion.reset(this._player.y - playerHalfHeight);
                         
                         // Show the player image
                         this._player.image = assets.getResult("Fish");
@@ -66,15 +65,15 @@ module managers {
                         createjs.Sound.stop();                     //Stop the background music
                         
                         // Switch to the END Scene
-                        scene = config.Scene.END;    
+                        scene = config.Scene.END;
                         changeScene();                          // Change the scene to END Scene
                     }
                 }
-               level1.scoreboard.update();                              // Update the Scoreboard (Lives and Scores)
+                level1.scoreboard.update();                              // Update the Scoreboard (Lives and Scores)
             }
         }
-        
-        
+
+
         public checkForLevel2(object: objects.GameObject) {
             var startPoint: createjs.Point = new createjs.Point();
             var endPoint: createjs.Point = new createjs.Point();
@@ -95,19 +94,18 @@ module managers {
                     console.log("Item Picked!");
                     object.image = assets.getResult("");            // Hide the Item
                     scores += 100;                                  // Increment the player score by 100
-                    if(scores >= 4000)
-                        {
-                            // Switch to the LEVEL3 Scene
-                            scene = config.Scene.LEVEL3;   
-                            changeScene();                          // Change the scene to LEVEL3 Scene                         
-                        }
+                    if (scores >= 4000) {
+                        // Switch to the LEVEL3 Scene
+                        scene = config.Scene.LEVEL3;
+                        changeScene();                          // Change the scene to LEVEL3 Scene                         
+                    }
                 }
                 
                 // check if it's a Dragon hit
                 if (object.name === "seamonster" && object.isHit === false) {
                     createjs.Sound.play("MonsterEatFish");                         // Generate the explosion sound
                     // Update the explosion image
-                     level2.explosion.update(this._player.y - playerHalfHeight);
+                    level2.explosion.update(this._player.y - playerHalfHeight);
                     
                     // Hides the player image
                     this._player.image = assets.getResult("");
@@ -133,10 +131,10 @@ module managers {
                         changeScene();                             // Change the scene to END Scene
                     }
                 }
-               level2.scoreboard.update();                              // Update the Scoreboard (Lives and Scores)
+                level2.scoreboard.update();                              // Update the Scoreboard (Lives and Scores)
             }
         }
-        
+
         public checkForLevel3(object: objects.GameObject) {
             var startPoint: createjs.Point = new createjs.Point();
             var endPoint: createjs.Point = new createjs.Point();
@@ -157,26 +155,25 @@ module managers {
                     console.log("Item Picked!");
                     object.image = assets.getResult("");            // Hide the Item
                     scores += 100;                                  // Increment the player score by 100
-                    if(scores >= 6000)
-                        {
-                            // Switch to the WINNING Scene
-                            scene = config.Scene.LEVEL3;   
-                            changeScene();                          // Change the scene to LEVEL3 Scene                         
-                        }
+                    if (scores >= 6000) {
+                        // Switch to the WINNING Scene
+                        scene = config.Scene.LEVEL3;
+                        changeScene();                          // Change the scene to LEVEL3 Scene                         
+                    }
                 }
                 
                 // check if it's a Dragon hit
                 if (object.name === "seamonster" && object.isHit === false) {
                     createjs.Sound.play("MonsterEatFish");                         // Generate the explosion sound
                     // Update the explosion image
-                   // play.explosion.update(this._player.y - playerHalfHeight);
+                    // play.explosion.update(this._player.y - playerHalfHeight);
                     
                     // Hides the player image
                     this._player.image = assets.getResult("");
 
                     setTimeout(() => {
-                       // Reset (Hide) the explosion image after half second
-                       // play.explosion.reset(this._player.y - playerHalfHeight);
+                        // Reset (Hide) the explosion image after half second
+                        // play.explosion.reset(this._player.y - playerHalfHeight);
                         
                         // Show the player image
                         this._player.image = assets.getResult("Fish");
@@ -195,7 +192,7 @@ module managers {
                         changeScene();                             // Change the scene to END Scene
                     }
                 }
-               level2.scoreboard.update();                              // Update the Scoreboard (Lives and Scores)
+                level2.scoreboard.update();                              // Update the Scoreboard (Lives and Scores)
             }
         }
     }
