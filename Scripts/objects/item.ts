@@ -7,8 +7,8 @@ module objects {
         private _currentLevel:string;
         
         //CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
-        constructor(bitmapString:string,currentLevel:string) {
-            super(bitmapString);
+        constructor(spriteString:string,currentLevel:string) {
+            super(spriteString);
             this._speed.x = 5;           // Item Speed
             this._reset(this._rightBounds);
             this.name = "item";

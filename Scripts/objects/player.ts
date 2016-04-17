@@ -1,7 +1,7 @@
 module objects {
     
     // PLAYER Class  ++++++++++++++++++++++++++++++++++++
-    export class Player extends createjs.Bitmap {
+    export class Player extends createjs.Sprite {
         
         //PRIVATE INSTANCE VARIABLES ++++++++++++++++++++
         private _topBounds: number;
@@ -14,7 +14,7 @@ module objects {
         
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
         constructor() {
-            super(assets.getResult("Fish"));
+            super(textureAtlas,"Fish");
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
 
@@ -40,11 +40,9 @@ module objects {
         
         //PUBLIC METHODS
         public update(): void {
-            //this.image = (this._fishNumber==1)?assets.getResult("Fish"):assets.getResult("Fish1");
             this.y = stage.mouseY;
-            
             this._checkBounds();
-            //this._fishNumber= (this._fishNumber==1)?2:1;
+            
         }
     }
 }

@@ -1,7 +1,8 @@
 /// <reference path="../typings/tsd.d.ts"/>
 
 /// <reference path="../config/config.ts" />
-
+/// <reference path="../objects/gameobject.ts" />
+/// <reference path="../objects/spritegameobject.ts" />
 /// <reference path="../objects/sea.ts" />
 /// <reference path="../objects/player.ts" />
 /// <reference path="../objects/explosion.ts" />
@@ -14,6 +15,9 @@
 /// <reference path="../objects/scoresystem.ts" />
 /// <reference path="../managers/collision.ts" />
 
+/// <reference path="../scenes/menu.ts" />
+/// <reference path="../scenes/play.ts" />
+/// <reference path="../scenes/end.ts" />
 /// <reference path="../scenes/levels.ts" />
 /// <reference path="../scenes/level1.ts" />
 /// <reference path="../scenes/level2.ts" />

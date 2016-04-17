@@ -10,7 +10,7 @@ var objects;
         __extends(BulletFish, _super);
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
         function BulletFish(player) {
-            _super.call(this, assets.getResult("Bullet"));
+            _super.call(this, textureAtlas, "Bullet");
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
             this.centerX = this.width * 0.5;
@@ -20,8 +20,6 @@ var objects;
             this._topBounds = this.height * 0.5;
             this._bottomBounds = config.Screen.HEIGHT - (this.height * 0.5);
             this.isHit = false;
-            //this.x = 64;
-            //this._fishNumber=1;
         }
         //PRIVATE METHODS
         BulletFish.prototype._checkBounds = function () {
@@ -30,17 +28,18 @@ var objects;
                 this.x = 71;
                 fired = false;
                 this.isHit = false;
-                this.image = assets.getResult("");
+                this.visible = false;
             }
         };
         //PUBLIC METHODS
         BulletFish.prototype.update = function () {
-            this.image = assets.getResult("Bullet");
+            this.visible = true;
+            //this.image = assets.getResult("Bullet");
             this.x += 7;
             this._checkBounds();
         };
         return BulletFish;
-    })(createjs.Bitmap);
+    })(createjs.Sprite);
     objects.BulletFish = BulletFish;
 })(objects || (objects = {}));
 //# sourceMappingURL=bullet.js.map

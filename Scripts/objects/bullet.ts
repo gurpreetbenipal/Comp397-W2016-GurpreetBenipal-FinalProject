@@ -1,6 +1,6 @@
 module objects {
     //BULLET CLASS +++++++++++++++++++++++++++++++++++++
-    export class BulletFish extends createjs.Bitmap {
+    export class BulletFish extends createjs.Sprite {
         
         //PRIVATE INSTANCE VARIABLES ++++++++++++++++++++
         private _topBounds: number;
@@ -15,7 +15,7 @@ module objects {
         
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
         constructor(player: objects.Player) {
-            super(assets.getResult("Bullet"));
+            super(textureAtlas,"Bullet");
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
             this.centerX = this.width * 0.5;
@@ -28,10 +28,6 @@ module objects {
             this._bottomBounds = config.Screen.HEIGHT - (this.height * 0.5);
 
             this.isHit = false;
-          
-            
-            //this.x = 64;
-            //this._fishNumber=1;
         }
         
         //PRIVATE METHODS
@@ -41,13 +37,15 @@ module objects {
                 this.x = 71;
                 fired = false;
                 this.isHit = false;
-                this.image = assets.getResult("");
+                this.visible=false;
+                //this.image = assets.getResult("");
             }
         }
         
         //PUBLIC METHODS
         public update(): void {
-            this.image = assets.getResult("Bullet");
+            this.visible=true;
+            //this.image = assets.getResult("Bullet");
             this.x += 7;
             this._checkBounds();
         }

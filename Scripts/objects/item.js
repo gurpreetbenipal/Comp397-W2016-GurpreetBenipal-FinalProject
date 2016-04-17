@@ -9,8 +9,8 @@ var objects;
     var Item = (function (_super) {
         __extends(Item, _super);
         //CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
-        function Item(bitmapString, currentLevel) {
-            _super.call(this, bitmapString);
+        function Item(spriteString, currentLevel) {
+            _super.call(this, spriteString);
             this._speed.x = 5; // Item Speed
             this._reset(this._rightBounds);
             this.name = "item";
