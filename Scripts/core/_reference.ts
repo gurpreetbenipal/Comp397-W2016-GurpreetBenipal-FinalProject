@@ -9,6 +9,8 @@
 /// <reference path="../objects/seamonsterLevel1.ts" />
 /// <reference path="../objects/seamonsterLevel2.ts" />
 /// <reference path="../objects/seamonsterLevel3.ts" />
+/// <reference path="../objects/fireball.ts" />
+/// <reference path="../objects/bullet.ts" />
 /// <reference path="../objects/scoresystem.ts" />
 /// <reference path="../managers/collision.ts" />
 
@@ -17,3 +19,5 @@
 /// <reference path="../scenes/level2.ts" />
 /// <reference path="../scenes/level3.ts" />
 /// <reference path="../scenes/instructions.ts" />
+
+

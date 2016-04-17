@@ -74,6 +74,9 @@ var assetData: objects.Asset[] = [
     { id: "SeaMonster6Level2", src: "../../Assets/images/SeaMonster6Level2.png" },
     
     { id: "SeaMonster1Level3", src: "../../Assets/images/WaterDragon1Level3.png" },
+    
+    { id: "Bullet", src: "../../Assets/images/bullet.png" },
+    { id: "Fireball", src: "../../Assets/images/fireball.png"},
 
     { id: "FishDestroy1", src: "../../Assets/images/fishdestroy1.png" },
     { id: "FishDestroy2", src: "../../Assets/images/fishdestroy2.png" },

@@ -27,5 +27,13 @@
     export class Game {
         public static FPS: number = 60;
     }
+    
+    //Keyboard Key Constants
+    
+    export class KEY{
+        public static SPACE: number = 32;
+    }
+    
+    
    
 }

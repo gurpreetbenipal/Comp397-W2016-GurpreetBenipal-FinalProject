@@ -34,5 +34,13 @@ var config;
         return Game;
     })();
     config.Game = Game;
+    //Keyboard Key Constants
+    var KEY = (function () {
+        function KEY() {
+        }
+        KEY.SPACE = 32;
+        return KEY;
+    })();
+    config.KEY = KEY;
 })(config || (config = {}));
 //# sourceMappingURL=config.js.map

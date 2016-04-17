@@ -1,20 +1,18 @@
 module objects {
-    
-    // PLAYER Class  ++++++++++++++++++++++++++++++++++++
-    export class Player extends createjs.Bitmap {
+    //SeaMonsterLevel2 CLASS +++++++++++++++++++++++++++++++++++++
+    export class Bullet extends createjs.Bitmap {
         
-        //PRIVATE INSTANCE VARIABLES ++++++++++++++++++++
+       //PRIVATE INSTANCE VARIABLES ++++++++++++++++++++
         private _topBounds: number;
         private _bottomBounds: number;
-       // private _fishNumber : number;
         
         //PUBLIC INSTANCE VARIABLES ++++++++++++++++++++
         public width: number;
         public height: number;
         
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
-        constructor() {
-            super(assets.getResult("Fish"));
+        constructor(player:objects.Player) {
+            super(assets.getResult("Bullet"));
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
 
@@ -24,27 +22,36 @@ module objects {
             this._topBounds = this.height * 0.5;
             this._bottomBounds = config.Screen.HEIGHT - (this.height * 0.5);
 
-            this.x = 64;
+          
+            
+            //this.x = 64;
             //this._fishNumber=1;
         }
         
         //PRIVATE METHODS
         private _checkBounds(): void {
-            if (this.y < this._topBounds) {
+           /* if (this.y < this._topBounds) {
                 this.y = this._topBounds;
             }
             if (this.y > this._bottomBounds) {
                 this.y = this._bottomBounds;
+            }*/
+            
+            if(this.x >= config.Screen.WIDTH)
+            {
+                //this.x= this._player.x;
+                this.x =71;
+                fired = false;
+                this.image = assets.getResult("");
             }
         }
         
         //PUBLIC METHODS
         public update(): void {
-            //this.image = (this._fishNumber==1)?assets.getResult("Fish"):assets.getResult("Fish1");
-            this.y = stage.mouseY;
-            
-            this._checkBounds();
-            //this._fishNumber= (this._fishNumber==1)?2:1;
+            this.image = assets.getResult("Bullet");
+            this.x +=7;
+            //this.y = this._player.y + this._player.height *0.5;
+            this._checkBounds();     
         }
     }
 }
