@@ -19,6 +19,7 @@ var levels: scenes.Levels;
 var level1: scenes.Level1;
 var level2: scenes.Level2;
 var level3: scenes.Level3;
+var win: scenes.Win;
 
 var assetData: objects.Asset[] = [
     // Add your Assets here
@@ -40,6 +41,10 @@ var assetData: objects.Asset[] = [
     { id: "Fish", src: "../../Assets/images/player.png" },
     { id: "Fish1", src: "../../Assets/images/player1.png" },
     
+    { id: "Level1Label", src: "../../Assets/images/Level1Label.png" },
+    { id: "Level2Label", src: "../../Assets/images/Level2Label.png" },
+    { id: "Level3Label", src: "../../Assets/images/Level3Label.png" },
+    
     { id: "Level1Instructions", src: "../../Assets/images/Level1Instructions.png" },
     { id: "Level2Instructions", src: "../../Assets/images/Level2Instructions.png" },
     { id: "Level3Instructions", src: "../../Assets/images/Level3Instructions.png" },
@@ -58,6 +63,8 @@ var assetData: objects.Asset[] = [
     
     { id: "Shell", src: "../../Assets/images/shell.png" },
     { id: "Ring", src: "../../Assets/images/ring.png" },
+    { id: "DiamondHeart", src: "../../Assets/images/diamondHeart.png" },
+    { id: "GoldTreasure", src: "../../Assets/images/goldTreasure.png" },
 
     { id: "SeaMonster1Level1", src: "../../Assets/images/SeaMonster1Level1.png" },
     { id: "SeaMonster2Level1", src: "../../Assets/images/SeaMonster2Level1.png" },
@@ -77,6 +84,7 @@ var assetData: objects.Asset[] = [
     
     { id: "Bullet", src: "../../Assets/images/bullet.png" },
     { id: "Fireball", src: "../../Assets/images/fireball.png"},
+    { id: "CongratsMessage", src: "../../Assets/images/congratsMessage.png"},
 
     { id: "FishDestroy1", src: "../../Assets/images/fishdestroy1.png" },
     { id: "FishDestroy2", src: "../../Assets/images/fishdestroy2.png" },
@@ -96,6 +104,7 @@ var assetData: objects.Asset[] = [
     { id: "Level2Sound", src: "../../Assets/audio/level2Sound.wav" },
     { id: "Level3Sound", src: "../../Assets/audio/level3Sound.mp3" },
     { id: "MonsterEatFish", src: "../../Assets/audio/monstereatfish.wav" },
+    { id: "BulletSound", src: "../../Assets/audio/bulletfired.wav" },
 ];
 
 function preload() {
@@ -214,6 +223,13 @@ function changeScene(): void {
             level3 = new scenes.Level3();
             currentScene = level3;
             console.log("Starting LEVEL 3 Scene");
+            break;
+        case config.Scene.WIN:
+            // show the WIN scene
+            stage.removeAllChildren();
+            win = new scenes.Win();
+            currentScene = win;
+            console.log("Starting WIN Scene");
             break;
     }
 

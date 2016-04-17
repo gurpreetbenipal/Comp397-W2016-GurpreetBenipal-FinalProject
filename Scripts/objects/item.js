@@ -74,13 +74,13 @@ var objects;
                         this.image = assets.getResult("Shell");
                         break;
                     case 2:
-                        this.image = assets.getResult("Ring");
+                        this.image = assets.getResult("DiamondHeart");
                         break;
                     case 3:
-                        this.image = assets.getResult("CoinStack");
+                        this.image = assets.getResult("Ring");
                         break;
                     case 4:
-                        this.image = assets.getResult("MoneyBag");
+                        this.image = assets.getResult("GoldTreasure");
                         break;
                     case 5:
                         this.image = assets.getResult("Star");

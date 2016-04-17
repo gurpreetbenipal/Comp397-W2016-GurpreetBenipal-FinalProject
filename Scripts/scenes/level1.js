@@ -27,8 +27,10 @@ var scenes;
             // added Sea to the scene
             this._sea = new objects.Sea("Level1Sea");
             this.addChild(this._sea);
-            //Add TITLE Label
-            this._titleLabel = new objects.Label("LEVEL 1", "bold 26px CONSOLAS", "#0033cc", config.Screen.CENTER_X, 30, true);
+            //Add TITLE Label1
+            this._titleLabel = new createjs.Bitmap(assets.getResult("Level1Label"));
+            this._titleLabel.x = config.Screen.CENTER_X - 80;
+            this._titleLabel.y = 0;
             this.addChild(this._titleLabel);
             // added Item to the scene
             this._item = new objects.Item("Coin", "level1");

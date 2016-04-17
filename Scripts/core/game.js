@@ -16,6 +16,7 @@ var levels;
 var level1;
 var level2;
 var level3;
+var win;
 var assetData = [
     // Add your Assets here
     { id: "PlayButton", src: "../../Assets/images/PlayButton.png" },
@@ -35,6 +36,9 @@ var assetData = [
     { id: "PlayAgainButton", src: "../../Assets/images/PlayAgainButton.png" },
     { id: "Fish", src: "../../Assets/images/player.png" },
     { id: "Fish1", src: "../../Assets/images/player1.png" },
+    { id: "Level1Label", src: "../../Assets/images/Level1Label.png" },
+    { id: "Level2Label", src: "../../Assets/images/Level2Label.png" },
+    { id: "Level3Label", src: "../../Assets/images/Level3Label.png" },
     { id: "Level1Instructions", src: "../../Assets/images/Level1Instructions.png" },
     { id: "Level2Instructions", src: "../../Assets/images/Level2Instructions.png" },
     { id: "Level3Instructions", src: "../../Assets/images/Level3Instructions.png" },
@@ -50,6 +54,8 @@ var assetData = [
     { id: "Heart", src: "../../Assets/images/heart.png" },
     { id: "Shell", src: "../../Assets/images/shell.png" },
     { id: "Ring", src: "../../Assets/images/ring.png" },
+    { id: "DiamondHeart", src: "../../Assets/images/diamondHeart.png" },
+    { id: "GoldTreasure", src: "../../Assets/images/goldTreasure.png" },
     { id: "SeaMonster1Level1", src: "../../Assets/images/SeaMonster1Level1.png" },
     { id: "SeaMonster2Level1", src: "../../Assets/images/SeaMonster2Level1.png" },
     { id: "SeaMonster3Level1", src: "../../Assets/images/SeaMonster3Level1.png" },
@@ -65,6 +71,7 @@ var assetData = [
     { id: "SeaMonster1Level3", src: "../../Assets/images/WaterDragon1Level3.png" },
     { id: "Bullet", src: "../../Assets/images/bullet.png" },
     { id: "Fireball", src: "../../Assets/images/fireball.png" },
+    { id: "CongratsMessage", src: "../../Assets/images/congratsMessage.png" },
     { id: "FishDestroy1", src: "../../Assets/images/fishdestroy1.png" },
     { id: "FishDestroy2", src: "../../Assets/images/fishdestroy2.png" },
     { id: "FishDestroy3", src: "../../Assets/images/fishdestroy3.png" },
@@ -82,6 +89,7 @@ var assetData = [
     { id: "Level2Sound", src: "../../Assets/audio/level2Sound.wav" },
     { id: "Level3Sound", src: "../../Assets/audio/level3Sound.mp3" },
     { id: "MonsterEatFish", src: "../../Assets/audio/monstereatfish.wav" },
+    { id: "BulletSound", src: "../../Assets/audio/bulletfired.wav" },
 ];
 function preload() {
     assets = new createjs.LoadQueue();
@@ -185,6 +193,13 @@ function changeScene() {
             level3 = new scenes.Level3();
             currentScene = level3;
             console.log("Starting LEVEL 3 Scene");
+            break;
+        case config.Scene.WIN:
+            // show the WIN scene
+            stage.removeAllChildren();
+            win = new scenes.Win();
+            currentScene = win;
+            console.log("Starting WIN Scene");
             break;
     }
     console.log(currentScene.numChildren);

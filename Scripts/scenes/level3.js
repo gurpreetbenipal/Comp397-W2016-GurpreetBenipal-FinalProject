@@ -29,7 +29,9 @@ var scenes;
             this._sea = new objects.Sea("Level3Sea");
             this.addChild(this._sea);
             //Add TITLE Label
-            this._titleLabel = new objects.Label("LEVEL 3", "bold 26px CONSOLAS", "#F0333c", config.Screen.CENTER_X, 30, true);
+            this._titleLabel = new createjs.Bitmap(assets.getResult("Level3Label"));
+            this._titleLabel.x = config.Screen.CENTER_X - 80;
+            this._titleLabel.y = 0;
             this.addChild(this._titleLabel);
             // added Item to the scene
             this._item = new objects.Item("Shell", "level3");
@@ -37,17 +39,23 @@ var scenes;
             // added Player to the scene
             this._player = new objects.Player();
             this.addChild(this._player);
+            //added Explosion to the scene
+            this.explosion = new objects.Explosion();
+            this.addChild(this.explosion);
             // added SeaMonster to the scene
             this._seamonster = new objects.SeaMonsterLevel3();
             this.addChild(this._seamonster);
             //added ScoreSystem to the scene
             this.scoreboard = new objects.ScoreSystem();
             this.addChild(this.scoreboard);
+            this.scoreboard.addEnemyHealthLabel();
+            // added Collision Manager to the scene
+            this._collision = new managers.Collision(this._player);
             //Add the Key Press event listener to the scene
             //stage.on("keypress",this._keyPressed,this);
             window.onkeydown = this._keyPressed;
             // added Bullet to the scene
-            this._bullet = new objects.Bullet(this._player);
+            this._bullet = new objects.BulletFish(this._player);
             this.addChild(this._bullet);
             // added Fireballs to the scene
             for (var fireball = 0; fireball < this._fireballsCount; fireball++) {
@@ -59,28 +67,31 @@ var scenes;
         };
         // LEVEL3 Scene updates here
         Level3.prototype.update = function () {
+            var _this = this;
             this._sea.update();
             this._player.update();
             this._item.update();
             this._seamonster.update();
+            // Check the Collision with ITEM
+            this._collision.checkForLevel3(this._item);
             this._fireballs.forEach(function (fireball) {
                 fireball.update();
                 // Check the Collision with Player
-                //this._collision.checkForLevel3(fireball);
+                _this._collision.checkForLevel3(fireball);
             });
             if (fired == true) {
-                //this._bullet.y = this._player.y + this._player.height * 0.5;
                 this._bullet.update();
+                // Check the Collision with Bullet
+                this._collision.checkForBulletCollision(this._bullet, this._seamonster);
             }
         };
         //EVENT HANDLERS ++++++++++++++++++++
         //Key Pressed Event Handler
         Level3.prototype._keyPressed = function (event) {
-            console.log("Key pressed");
             switch (event.keyCode) {
                 case config.KEY.SPACE:
-                    console.log("Space Key pressed");
                     fired = true;
+                    createjs.Sound.play("BulletSound");
                     level3._bullet.y = level3._player.y + level3._player.height * 0.5;
                     level3._bullet.x = 71;
                     //level3._bullet.update(level3._player);

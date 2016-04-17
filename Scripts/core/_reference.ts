@@ -19,5 +19,6 @@
 /// <reference path="../scenes/level2.ts" />
 /// <reference path="../scenes/level3.ts" />
 /// <reference path="../scenes/instructions.ts" />
+/// <reference path="../scenes/win.ts" />
 
 

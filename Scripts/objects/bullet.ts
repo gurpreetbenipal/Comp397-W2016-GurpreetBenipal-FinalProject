@@ -1,20 +1,25 @@
 module objects {
-    //SeaMonsterLevel2 CLASS +++++++++++++++++++++++++++++++++++++
-    export class Bullet extends createjs.Bitmap {
+    //BULLET CLASS +++++++++++++++++++++++++++++++++++++
+    export class BulletFish extends createjs.Bitmap {
         
-       //PRIVATE INSTANCE VARIABLES ++++++++++++++++++++
+        //PRIVATE INSTANCE VARIABLES ++++++++++++++++++++
         private _topBounds: number;
         private _bottomBounds: number;
         
         //PUBLIC INSTANCE VARIABLES ++++++++++++++++++++
         public width: number;
         public height: number;
+        public centerX: number;
+        public centerY: number;
+        public isHit: boolean;
         
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
-        constructor(player:objects.Player) {
+        constructor(player: objects.Player) {
             super(assets.getResult("Bullet"));
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
+            this.centerX = this.width * 0.5;
+            this.centerY = this.height * 0.5;
 
             this.regX = this.width * 0.5;
             this.regY = this.height * 0.5;
@@ -22,6 +27,7 @@ module objects {
             this._topBounds = this.height * 0.5;
             this._bottomBounds = config.Screen.HEIGHT - (this.height * 0.5);
 
+            this.isHit = false;
           
             
             //this.x = 64;
@@ -30,18 +36,11 @@ module objects {
         
         //PRIVATE METHODS
         private _checkBounds(): void {
-           /* if (this.y < this._topBounds) {
-                this.y = this._topBounds;
-            }
-            if (this.y > this._bottomBounds) {
-                this.y = this._bottomBounds;
-            }*/
-            
-            if(this.x >= config.Screen.WIDTH)
-            {
+            if (this.x >= config.Screen.WIDTH) {
                 //this.x= this._player.x;
-                this.x =71;
+                this.x = 71;
                 fired = false;
+                this.isHit = false;
                 this.image = assets.getResult("");
             }
         }
@@ -49,9 +48,8 @@ module objects {
         //PUBLIC METHODS
         public update(): void {
             this.image = assets.getResult("Bullet");
-            this.x +=7;
-            //this.y = this._player.y + this._player.height *0.5;
-            this._checkBounds();     
+            this.x += 7;
+            this._checkBounds();
         }
     }
 }

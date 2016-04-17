@@ -24,7 +24,7 @@ var scenes;
             this._sea = new objects.Sea("Level1Sea");
             this.addChild(this._sea);
             //Add TITLE Label
-            this._titleLabel = new objects.Label("Select Your Level", "bold 24px Cambiria", "#0033cc", config.Screen.CENTER_X, 30, true);
+            this._titleLabel = new objects.Label("Select Your Level", "bold 24px Consolas", "#0033cc", config.Screen.CENTER_X, 30, true);
             this.addChild(this._titleLabel);
             // add the LEVEL1 button to the Levels scene
             this._level1Button = new objects.Button("Level1Button", config.Screen.CENTER_X, config.Screen.CENTER_Y - 100, true);

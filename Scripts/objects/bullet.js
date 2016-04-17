@@ -5,45 +5,42 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var objects;
 (function (objects) {
-    //SeaMonsterLevel2 CLASS +++++++++++++++++++++++++++++++++++++
-    var Bullet = (function (_super) {
-        __extends(Bullet, _super);
+    //BULLET CLASS +++++++++++++++++++++++++++++++++++++
+    var BulletFish = (function (_super) {
+        __extends(BulletFish, _super);
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
-        function Bullet(player) {
+        function BulletFish(player) {
             _super.call(this, assets.getResult("Bullet"));
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
+            this.centerX = this.width * 0.5;
+            this.centerY = this.height * 0.5;
             this.regX = this.width * 0.5;
             this.regY = this.height * 0.5;
             this._topBounds = this.height * 0.5;
             this._bottomBounds = config.Screen.HEIGHT - (this.height * 0.5);
+            this.isHit = false;
             //this.x = 64;
             //this._fishNumber=1;
         }
         //PRIVATE METHODS
-        Bullet.prototype._checkBounds = function () {
-            /* if (this.y < this._topBounds) {
-                 this.y = this._topBounds;
-             }
-             if (this.y > this._bottomBounds) {
-                 this.y = this._bottomBounds;
-             }*/
+        BulletFish.prototype._checkBounds = function () {
             if (this.x >= config.Screen.WIDTH) {
                 //this.x= this._player.x;
                 this.x = 71;
                 fired = false;
+                this.isHit = false;
                 this.image = assets.getResult("");
             }
         };
         //PUBLIC METHODS
-        Bullet.prototype.update = function () {
+        BulletFish.prototype.update = function () {
             this.image = assets.getResult("Bullet");
             this.x += 7;
-            //this.y = this._player.y + this._player.height *0.5;
             this._checkBounds();
         };
-        return Bullet;
+        return BulletFish;
     })(createjs.Bitmap);
-    objects.Bullet = Bullet;
+    objects.BulletFish = BulletFish;
 })(objects || (objects = {}));
 //# sourceMappingURL=bullet.js.map

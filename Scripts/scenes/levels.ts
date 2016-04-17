@@ -32,7 +32,7 @@ module scenes {
             //Add TITLE Label
             this._titleLabel = new objects.Label(
                 "Select Your Level",
-                "bold 24px Cambiria",
+                "bold 24px Consolas",
                 "#0033cc",
                 config.Screen.CENTER_X,
                 30, true);
@@ -68,6 +68,7 @@ module scenes {
             
             // LEVEL3 Button event listener
             this._level3Button.on("click", this._level3ButtonClick, this);
+            
             
             // add the BACK button to the MENU scene
             this._backButton = new objects.Button(
@@ -115,6 +116,7 @@ module scenes {
 
             changeScene();
         }
+        
         
         // BACK Button click event handler
         private _backButtonClick(event: createjs.MouseEvent) {

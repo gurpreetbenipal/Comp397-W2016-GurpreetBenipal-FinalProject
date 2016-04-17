@@ -3,7 +3,7 @@ module scenes {
     // LEVEL2 CLASS ++++++++++++++++++++++++++++++++++++++++++
     export class Level2 extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++++++++++++
-        private _titleLabel: objects.Label;
+        private _titleLabel: createjs.Bitmap;
         private _sea: objects.Sea;
         private _player: objects.Player;
         private _item: objects.Item;
@@ -41,13 +41,10 @@ module scenes {
             this.addChild(this._sea);
             
             //Add TITLE Label2
-            this._titleLabel = new objects.Label(
-                "LEVEL 2",
-                "bold 26px CONSOLAS",
-                "#0033cc",
-                config.Screen.CENTER_X,
-                30, true);
-            this.addChild(this._titleLabel);
+             this._titleLabel = new createjs.Bitmap(assets.getResult("Level2Label"));
+             this._titleLabel.x = config.Screen.CENTER_X-80;
+             this._titleLabel.y = 0;
+             this.addChild(this._titleLabel);
             
             // added Item to the scene
             this._item = new objects.Item("Coin", "level2");

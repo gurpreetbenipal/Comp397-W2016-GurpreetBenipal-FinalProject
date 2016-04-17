@@ -12,6 +12,8 @@
         public static LEVEL2: number = 6;
         public static LEVEL3: number = 7;
         
+        public static WIN: number = 8;
+        
         
     }
     
