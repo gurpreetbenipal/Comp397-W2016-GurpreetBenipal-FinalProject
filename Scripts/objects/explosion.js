@@ -52,8 +52,7 @@ var objects;
         Explosion.prototype.reset = function (player_Y) {
             this.x = 10;
             this.y = player_Y;
-            this.visible = false;
-            // this.image = assets.getResult("");          // Hides the explosion image or Set it to null
+            this.visible = false; // Hides the explosion image or Set it to null
         };
         return Explosion;
     })(createjs.Sprite);

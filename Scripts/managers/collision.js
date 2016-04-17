@@ -92,13 +92,11 @@ var managers;
                     // Update the explosion image
                     level2.explosion.update(this._player.y - playerHalfHeight);
                     // Hides the player image
-                    //this._player.image = assets.getResult("");
                     this._player.visible = false;
                     setTimeout(function () {
                         // Reset (Hide) the explosion image after half second
                         level2.explosion.reset(_this._player.y - playerHalfHeight);
                         // Show the player image
-                        //this._player.image = assets.getResult("Fish");
                         _this._player.visible = true;
                     }, 1000);
                     console.log("Sea Monster hit!");
@@ -146,13 +144,11 @@ var managers;
                     // Update the explosion image
                     level3.explosion.update(this._player.y - playerHalfHeight);
                     // Hides the player image
-                    //this._player.image = assets.getResult("");
                     this._player.visible = false;
                     setTimeout(function () {
                         // Reset (Hide) the explosion image after half second
                         level3.explosion.reset(_this._player.y - playerHalfHeight);
                         // Show the player image
-                        //this._player.image = assets.getResult("Fish");
                         _this._player.visible = true;
                     }, 1000);
                     console.log("Sea Monster hit!");
@@ -196,10 +192,11 @@ var managers;
                         this._player.image = assets.getResult("Fish");
                     }, 1000);*/
                     console.log("Bullet hit!");
-                    bullet.isHit = true; // Make the isHit true, when dragon hits the player
+                    bullet.isHit = true; // Make the isHit true, when bullet hits the dragon
+                    bullet.visible = false;
                     level3.scoreboard.enemyLives -= 10; //Decrease the Enemy Lives by 1
                     //Check if the Lives count reaches to less than zero
-                    if (level3.scoreboard.enemyLives < 0) {
+                    if (level3.scoreboard.enemyLives <= 0) {
                         level3.scoreboard.enemyLives = 0;
                         createjs.Sound.stop(); //Stop the background music
                         // Switch to the WIN Scene

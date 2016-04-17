@@ -10,7 +10,7 @@ var objects;
         __extends(SeaMonsterLevel3, _super);
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
         function SeaMonsterLevel3() {
-            _super.call(this, assets.getResult("SeaMonster1Level3"));
+            _super.call(this, textureAtlas, "SeaMonsterLevel3");
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
             this.regX = this.width * 0.5;
@@ -19,15 +19,15 @@ var objects;
             this._bottomBounds = config.Screen.HEIGHT - (this.height * 0.5);
             this.x = 600;
             this.y = 0;
-            this._movement = 3;
+            this._movement = 2;
         }
         //PRIVATE METHODS
         SeaMonsterLevel3.prototype._checkBounds = function () {
             if (this.y < this._topBounds) {
-                this._movement = 3;
+                this._movement = 2;
             }
             if (this.y > this._bottomBounds) {
-                this._movement = -3;
+                this._movement = -2;
             }
         };
         //PUBLIC METHODS
@@ -36,7 +36,7 @@ var objects;
             this._checkBounds();
         };
         return SeaMonsterLevel3;
-    })(createjs.Bitmap);
+    })(createjs.Sprite);
     objects.SeaMonsterLevel3 = SeaMonsterLevel3;
 })(objects || (objects = {}));
 //# sourceMappingURL=seamonsterLevel3.js.map

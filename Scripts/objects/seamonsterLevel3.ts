@@ -1,7 +1,7 @@
 module objects {
     
     // PLAYER Class  ++++++++++++++++++++++++++++++++++++
-    export class SeaMonsterLevel3 extends createjs.Bitmap {
+    export class SeaMonsterLevel3 extends createjs.Sprite {
         
         //PRIVATE INSTANCE VARIABLES ++++++++++++++++++++
         private _topBounds: number;
@@ -15,7 +15,7 @@ module objects {
         
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
         constructor() {
-            super(assets.getResult("SeaMonster1Level3"));
+            super(textureAtlas,"SeaMonsterLevel3");
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
 
@@ -27,17 +27,17 @@ module objects {
 
             this.x = 600;
             this.y = 0;
-            this._movement=3;
+            this._movement=2;
            
         }
         
         //PRIVATE METHODS
         private _checkBounds(): void {
             if (this.y < this._topBounds) {
-                this._movement=3;
+                this._movement=2;
             }
             if (this.y > this._bottomBounds) {
-                this._movement=-3;
+                this._movement=-2;
             }
         }
         

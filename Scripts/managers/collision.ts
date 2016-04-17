@@ -227,7 +227,8 @@ module managers {
                     }, 1000);*/
 
                     console.log("Bullet hit!");
-                    bullet.isHit = true;                            // Make the isHit true, when dragon hits the player
+                    bullet.isHit = true;                            // Make the isHit true, when bullet hits the dragon
+                    bullet.visible=false;
                     level3.scoreboard.enemyLives -=10;                        //Decrease the Enemy Lives by 1
                    
                     //Check if the Lives count reaches to less than zero

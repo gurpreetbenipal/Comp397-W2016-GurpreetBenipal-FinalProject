@@ -237,14 +237,19 @@
             <key type="filename">SeaMonster1Level3.png</key>
             <key type="filename">SeaMonster2Level1.png</key>
             <key type="filename">SeaMonster2Level2.png</key>
+            <key type="filename">SeaMonster2Level3.png</key>
             <key type="filename">SeaMonster3Level1.png</key>
             <key type="filename">SeaMonster3Level2.png</key>
+            <key type="filename">SeaMonster3Level3.png</key>
             <key type="filename">SeaMonster4Level1.png</key>
             <key type="filename">SeaMonster4Level2.png</key>
+            <key type="filename">SeaMonster4Level3.png</key>
             <key type="filename">SeaMonster5Level1.png</key>
             <key type="filename">SeaMonster5Level2.png</key>
+            <key type="filename">SeaMonster5Level3.png</key>
             <key type="filename">SeaMonster6Level1.png</key>
             <key type="filename">SeaMonster6Level2.png</key>
+            <key type="filename">SeaMonster6Level3.png</key>
             <key type="filename">Shell.png</key>
             <key type="filename">Star.png</key>
             <key type="filename">Stars.png</key>
@@ -309,6 +314,11 @@
             <filename>Shell.png</filename>
             <filename>Star.png</filename>
             <filename>Stars.png</filename>
+            <filename>SeaMonster2Level3.png</filename>
+            <filename>SeaMonster3Level3.png</filename>
+            <filename>SeaMonster4Level3.png</filename>
+            <filename>SeaMonster5Level3.png</filename>
+            <filename>SeaMonster6Level3.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

@@ -91,6 +91,7 @@ var scenes;
             switch (event.keyCode) {
                 case config.KEY.SPACE:
                     fired = true;
+                    level3._bullet.visible = true;
                     createjs.Sound.play("BulletSound");
                     level3._bullet.y = level3._player.y + level3._player.height * 0.5;
                     level3._bullet.x = 71;
