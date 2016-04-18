@@ -201,6 +201,10 @@
             <key type="filename">Coins.png</key>
             <key type="filename">CongratsMessage.png</key>
             <key type="filename">Crown.png</key>
+            <key type="filename">DeadMonster1.png</key>
+            <key type="filename">DeadMonster2.png</key>
+            <key type="filename">DeadMonster3.png</key>
+            <key type="filename">DeadMonster4.png</key>
             <key type="filename">DiamondHeart.png</key>
             <key type="filename">Eagle.png</key>
             <key type="filename">ExitButton.PNG</key>
@@ -319,6 +323,10 @@
             <filename>SeaMonster4Level3.png</filename>
             <filename>SeaMonster5Level3.png</filename>
             <filename>SeaMonster6Level3.png</filename>
+            <filename>DeadMonster1.png</filename>
+            <filename>DeadMonster2.png</filename>
+            <filename>DeadMonster3.png</filename>
+            <filename>DeadMonster4.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

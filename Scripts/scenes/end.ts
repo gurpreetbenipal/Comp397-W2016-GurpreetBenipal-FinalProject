@@ -3,7 +3,8 @@ module scenes {
     // END CLASS ++++++++++++++++++++++++++++++++++++++++++
     export class End extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++++++++++++
-        private _gameoverLabel: objects.Label;
+        //private _gameoverLabel: objects.Label;
+        private _gameoverLabel: createjs.Bitmap;
         private _playAgainButton: objects.Button;
         private _sea: objects.Sea;
         
@@ -27,15 +28,10 @@ module scenes {
             this.addChild(this._sea);
             
             //Add GAME OVER Label
-            this._gameoverLabel = new objects.Label(
-                "GAME OVER !",
-                "bold 60px CONSOLAS",
-                "#990000",
-                config.Screen.CENTER_X + 20, config.Screen.CENTER_Y - 40, true);
+            this._gameoverLabel = new createjs.Bitmap(assets.getResult("GameOver"));
+            this._gameoverLabel.x = 100;
+            this._gameoverLabel.y = config.Screen.CENTER_Y - 120;
             this.addChild(this._gameoverLabel);
-            
-            // add the Score Board to the Game Over Scene
-           // this.addChild(play.scoreboard);
             
             // add the PLAY AGAIN button to the OVER scene
             this._playAgainButton = new objects.Button(

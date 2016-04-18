@@ -6,7 +6,7 @@ module scenes {
         private _nextButton: objects.Button;
         private _backButton: objects.Button;
         private _sea: objects.Sea;
-        private _instructions:createjs.Bitmap;
+        private _instructions: createjs.Bitmap;
         private _instructionsFor: string;
         
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++
@@ -33,7 +33,7 @@ module scenes {
             this._instructions = new createjs.Bitmap(assets.getResult("Level1Instructions"));
             this.addChild(this._instructions);
             
-             // add the BACK button to the INSTRUCTIONS scene
+            // add the BACK button to the INSTRUCTIONS scene
             this._backButton = new objects.Button(
                 "BackButton",
                 config.Screen.CENTER_X - 170,
@@ -54,7 +54,7 @@ module scenes {
             this._nextButton.on("click", this._nextButtonClick, this);
 
             //Set the level name for which the instructions need to be displayed
-            this._instructionsFor="level2";
+            this._instructionsFor = "level2";
             
             // add this scene to the global stage container
             stage.addChild(this);
@@ -76,17 +76,17 @@ module scenes {
                 case "level1":
                     console.log("Instructions for Level1");
                     this._instructions.image = assets.getResult("Level1Instructions");
-                    this._instructionsFor="level2";
+                    this._instructionsFor = "level2";
                     break;
                 case "level2":
                     console.log("Instructions for Level2");
                     this._instructions.image = assets.getResult("Level2Instructions");
-                    this._instructionsFor="level3";
+                    this._instructionsFor = "level3";
                     break;
                 case "level3":
                     console.log("Instructions for Level3");
                     this._instructions.image = assets.getResult("Level3Instructions");
-                    this._instructionsFor="level1";
+                    this._instructionsFor = "level1";
                     break;
                 default:
                     break;

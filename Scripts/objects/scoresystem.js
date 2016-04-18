@@ -5,17 +5,17 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var objects;
 (function (objects) {
+    //SCORESYSTEM CLASS ++++++++++++++++++++++++++++++++++++
     var ScoreSystem = (function (_super) {
         __extends(ScoreSystem, _super);
         //CONSTRUCTOR++++++++++++++++++++++++++++++++++++++++
         function ScoreSystem() {
             _super.call(this);
-            //this.scores = 0;
             this.lives = 5;
             // Create a New Score Label
-            this._scoreLabel = new objects.Label("Scores : " + scores, "bold 22px Consolas", "#ff6600", 20, 10, false);
+            this._scoreLabel = new objects.Label("Scores : " + scores, "bold 22px Consolas", "#800000", 20, 10, false);
             // Create a New Lives Label
-            this._livesLabel = new objects.Label("Lives Left : " + this.lives, "bold 22px Consolas", "#ff6600", 520, 10, false);
+            this._livesLabel = new objects.Label("Lives Left : " + this.lives, "bold 22px Consolas", "#800000", 520, 10, false);
             this.addChild(this._scoreLabel);
             this.addChild(this._livesLabel);
         }

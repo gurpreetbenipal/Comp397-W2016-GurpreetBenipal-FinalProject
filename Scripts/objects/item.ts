@@ -4,15 +4,15 @@ module objects {
     export class Item extends objects.GameObject {
         
         //PRIVATE INSTANCE VARIABLES++++++++++++++++++++++++++
-        private _currentLevel:string;
+        private _currentLevel: string;
         
         //CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
-        constructor(spriteString:string,currentLevel:string) {
+        constructor(spriteString: string, currentLevel: string) {
             super(spriteString);
             this._speed.x = 5;           // Item Speed
-            this._reset(this._rightBounds);
+            this._reset(this._rightBounds); 
             this.name = "item";
-            this._currentLevel=currentLevel;
+            this._currentLevel = currentLevel;
         }
         
         // Check to see if the top of the item
@@ -25,9 +25,10 @@ module objects {
         
         //Reset the item offscreen
         protected _reset(value: number): void {
-            var randomNumber: number = Math.floor(Math.random() * 5 )+ 1;
-            if(this._currentLevel == "level1")
-            {
+            var randomNumber: number = Math.floor(Math.random() * 5) + 1;
+            
+            //Pick random Item for Level1
+            if (this._currentLevel == "level1") {
                 switch (randomNumber) {
                     case 1:
                         this.image = assets.getResult("Coin");
@@ -48,8 +49,8 @@ module objects {
                         break;
                 }
             }
-            else if(this._currentLevel == "level2")
-            {
+            //Pick random Item for Level2
+            else if (this._currentLevel == "level2") {
                 switch (randomNumber) {
                     case 1:
                         this.image = assets.getResult("Stars");
@@ -70,8 +71,8 @@ module objects {
                         break;
                 }
             }
-            else if(this._currentLevel == "level3")
-            {
+            //Pick random Item for Level3
+            else if (this._currentLevel == "level3") {
                 switch (randomNumber) {
                     case 1:
                         this.image = assets.getResult("Shell");
@@ -92,7 +93,7 @@ module objects {
                         break;
                 }
             }
-            
+            //Set the X and Y coordinates of Item
             this.x = value;
             this.y = Math.floor(Math.random() * this._bottomBounds) + this._topBounds;
 

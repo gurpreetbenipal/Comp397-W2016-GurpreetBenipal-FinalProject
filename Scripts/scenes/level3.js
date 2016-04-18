@@ -29,7 +29,7 @@ var scenes;
             this._sea = new objects.Sea("Level3Sea");
             this.addChild(this._sea);
             //Add TITLE Label
-            this._titleLabel = new createjs.Bitmap(assets.getResult("Level3Label"));
+            this._titleLabel = new createjs.Sprite(textureAtlas, "Level3Label");
             this._titleLabel.x = config.Screen.CENTER_X - 80;
             this._titleLabel.y = 0;
             this.addChild(this._titleLabel);
@@ -52,7 +52,6 @@ var scenes;
             // added Collision Manager to the scene
             this._collision = new managers.Collision(this._player);
             //Add the Key Press event listener to the scene
-            //stage.on("keypress",this._keyPressed,this);
             window.onkeydown = this._keyPressed;
             // added Bullet to the scene
             this._bullet = new objects.BulletFish(this._player);
@@ -90,12 +89,12 @@ var scenes;
         Level3.prototype._keyPressed = function (event) {
             switch (event.keyCode) {
                 case config.KEY.SPACE:
-                    fired = true;
+                    fired = true; //Set the Bullet fired true whne SPACEBAR is pressed                               
                     level3._bullet.visible = true;
                     createjs.Sound.play("BulletSound");
-                    level3._bullet.y = level3._player.y + level3._player.height * 0.5;
+                    //Set the X and Y position of bullet
                     level3._bullet.x = 71;
-                    //level3._bullet.update(level3._player);
+                    level3._bullet.y = level3._player.y + level3._player.height * 0.5;
                     break;
             }
         };

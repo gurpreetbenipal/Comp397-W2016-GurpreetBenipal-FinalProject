@@ -3,13 +3,13 @@ module objects {
     export class Sea extends objects.GameObject {
       
         //CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
-        constructor(bitmapString:string) {
+        constructor(bitmapString: string) {
             super(bitmapString);
             this._speed.x = 5;           // 5 pixels per frame
             this._reset(0);
         }
         
-        // Check to see if the right of the sky
+        // Check to see if the right of the Sea
         // has met the right of the scene
         protected _checkBounds(value: number): void {
             if (this.x <= value) {
@@ -17,16 +17,16 @@ module objects {
             }
         }
         
-        //Reset the sky offscreen
+        //Reset the Sea offscreen
         protected _reset(value: number): void {
             this.x = value;
         }
         
         //PUBLIC METHODS +++++++++++++++++++++++++++++++++++++++
         public update(): void {
-            //Scroll the sky 5 pixels per frame
+            //Scroll the Sea 5 pixels per frame
             this.x -= this._speed.x;
-            this._checkBounds(-2040);//1280
+            this._checkBounds(-2040);
         }
     }
 }

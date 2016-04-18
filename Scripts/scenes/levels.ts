@@ -1,6 +1,6 @@
-// MENU SCENE
+// LEVELS SCENE
 module scenes {
-    //MENU CLASS ++++++++++++++++++++++++++++++++
+    //LEVELS CLASS ++++++++++++++++++++++++++++++++
     export class Levels extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
         private _titleLabel: objects.Label;
@@ -19,7 +19,7 @@ module scenes {
         
         // Start Method
         public start(): void {
-             // Stop the Previous Background Music
+            // Stop the Previous Background Music
             createjs.Sound.stop();
             
             // Generate the Background Music Infinitely
@@ -53,7 +53,7 @@ module scenes {
             this._level2Button = new objects.Button(
                 "Level2Button",
                 config.Screen.CENTER_X,
-                config.Screen.CENTER_Y , true);
+                config.Screen.CENTER_Y, true);
             this.addChild(this._level2Button);
             
             // INSTRUCTIONS Button event listener
@@ -113,20 +113,15 @@ module scenes {
             createjs.Sound.play("buttonpress");
             // Switch to the LEVEL3 Scene
             scene = config.Scene.LEVEL3;
-
             changeScene();
         }
-        
         
         // BACK Button click event handler
         private _backButtonClick(event: createjs.MouseEvent) {
             createjs.Sound.play("buttonpress");
             // Switch to the MENU Scene
             scene = config.Scene.MENU;
-
             changeScene();
         }
-
-
     }
 }

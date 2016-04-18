@@ -1,11 +1,11 @@
 ﻿// MENU SCENE
-var scores:number;
+var scores: number;
 
 module scenes {
     //MENU CLASS ++++++++++++++++++++++++++++++++
     export class Menu extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
-        private _welcomeLabel: objects.Label;
+        private _welcomeLabel: createjs.Bitmap;
         private _playButton: objects.Button;
         private _instructionsButton: objects.Button;
         private _exitButton: objects.Button;
@@ -27,22 +27,16 @@ module scenes {
             
             // Generate the Background Music Infinitely
             createjs.Sound.play("SeaWavesSound", { "loop": -1 });
-            
-            scores=0;
-            
-            
-            
+            scores = 0;
+                
             // added Sea to the scene
             this._sea = new objects.Sea("CommonBackground");
             this.addChild(this._sea);
             
             //Add WELCOME Label
-            this._welcomeLabel = new objects.Label(
-                "WELCOME TO 'THE SEA WORLD'",
-                "bold 26px CONSOLAS",
-                "#0033cc",
-                config.Screen.CENTER_X + 30,
-                30, true);
+            this._welcomeLabel = new createjs.Bitmap(assets.getResult("Welcome"));
+            this._welcomeLabel.x=70;
+            this._welcomeLabel.y=20;
             this.addChild(this._welcomeLabel);
             
             // add the PLAY button to the MENU scene
@@ -53,14 +47,13 @@ module scenes {
             this.addChild(this._playButton);
             
             // Play Button event listener
-            this._playButton.on("click", this._playButtonClick, this);
-            
+            this._playButton.on("click", this._playButtonClick, this); 
             
             // add the INSTRUCTIONS button to the MENU scene
             this._instructionsButton = new objects.Button(
                 "InstructionsButton",
                 config.Screen.CENTER_X,
-                config.Screen.CENTER_Y , true);
+                config.Screen.CENTER_Y, true);
             this.addChild(this._instructionsButton);
             
             // INSTRUCTIONS Button event listener
@@ -103,10 +96,6 @@ module scenes {
             createjs.Sound.play("buttonpress");
             // Switch to the PLAY Scene
             scene = config.Scene.PLAY;
-            
-            // Switch the THEME of the Scene to DAYTHEME
-            //theme = config.Sky.DAYTHEME;
-            
             changeScene();
         }
         
@@ -118,24 +107,18 @@ module scenes {
             changeScene();
         }
         
-         // LEVELS Button click event handler
+        // LEVELS Button click event handler
         private _levelsButtonClick(event: createjs.MouseEvent) {
             createjs.Sound.play("buttonpress");
             // Switch to the LEVELS Scene
             scene = config.Scene.LEVELS;
-
             changeScene();
         }
         
         // EXIT Button click event handler
         private _exitButtonClick(event: createjs.MouseEvent) {
-            createjs.Sound.play("buttonpress");
-            window.close();    
-            //var objWindow = window.open(location.href, "_self");
-            //objWindow.close();
-            open(location.href,'_self').close();
+            createjs.Sound.play("buttonpress"); 
+            open(location.href, '_self').close();
         }
-
-
     }
 }

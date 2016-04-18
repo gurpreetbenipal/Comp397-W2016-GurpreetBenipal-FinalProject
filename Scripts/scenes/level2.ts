@@ -3,7 +3,7 @@ module scenes {
     // LEVEL2 CLASS ++++++++++++++++++++++++++++++++++++++++++
     export class Level2 extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++++++++++++
-        private _titleLabel: createjs.Bitmap;
+        private _titleLabel: createjs.Sprite;
         private _sea: objects.Sea;
         private _player: objects.Player;
         private _item: objects.Item;
@@ -41,10 +41,10 @@ module scenes {
             this.addChild(this._sea);
             
             //Add TITLE Label2
-             this._titleLabel = new createjs.Bitmap(assets.getResult("Level2Label"));
-             this._titleLabel.x = config.Screen.CENTER_X-80;
-             this._titleLabel.y = 0;
-             this.addChild(this._titleLabel);
+            this._titleLabel = new createjs.Sprite(textureAtlas, "Level2Label");
+            this._titleLabel.x = config.Screen.CENTER_X - 80;
+            this._titleLabel.y = 0;
+            this.addChild(this._titleLabel);
             
             // added Item to the scene
             this._item = new objects.Item("Coin", "level2");
@@ -89,8 +89,5 @@ module scenes {
             // Check the Collision with ITEM
             this._collision.checkForLevel2(this._item);
         }
-        
-        
-        //EVENT HANDLERS ++++++++++++++++++++
     }
 }

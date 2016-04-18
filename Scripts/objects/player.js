@@ -18,7 +18,6 @@ var objects;
             this._topBounds = this.height * 0.5;
             this._bottomBounds = config.Screen.HEIGHT - (this.height * 0.5);
             this.x = 64;
-            //this._fishNumber=1;
         }
         //PRIVATE METHODS
         Player.prototype._checkBounds = function () {
@@ -30,6 +29,7 @@ var objects;
             }
         };
         //PUBLIC METHODS
+        //Update the Player 
         Player.prototype.update = function () {
             this.y = stage.mouseY;
             this._checkBounds();

@@ -5,6 +5,7 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var objects;
 (function (objects) {
+    //BUTTON CLASS +++++++++++++++++++++++++++++++++++
     var Button = (function (_super) {
         __extends(Button, _super);
         //CONSTRUCTOR

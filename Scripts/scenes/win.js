@@ -24,7 +24,7 @@ var scenes;
             this._sea = new objects.Sea("CommonBackground");
             this.addChild(this._sea);
             //Add TITLE Label
-            this._gamewinLabel = new createjs.Bitmap(assets.getResult("CongratsMessage"));
+            this._gamewinLabel = new createjs.Sprite(textureAtlas, "CongratsMessage");
             this._gamewinLabel.x = 0;
             this._gamewinLabel.y = 90;
             this.addChild(this._gamewinLabel);

@@ -14,22 +14,22 @@ var objects;
             this._speed.x = 5; // 5 pixels per frame
             this._reset(0);
         }
-        // Check to see if the right of the sky
+        // Check to see if the right of the Sea
         // has met the right of the scene
         Sea.prototype._checkBounds = function (value) {
             if (this.x <= value) {
                 this._reset(0);
             }
         };
-        //Reset the sky offscreen
+        //Reset the Sea offscreen
         Sea.prototype._reset = function (value) {
             this.x = value;
         };
         //PUBLIC METHODS +++++++++++++++++++++++++++++++++++++++
         Sea.prototype.update = function () {
-            //Scroll the sky 5 pixels per frame
+            //Scroll the Sea 5 pixels per frame
             this.x -= this._speed.x;
-            this._checkBounds(-2040); //1280
+            this._checkBounds(-2040);
         };
         return Sea;
     })(objects.GameObject);

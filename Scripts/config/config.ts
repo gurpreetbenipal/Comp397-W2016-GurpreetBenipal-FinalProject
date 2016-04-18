@@ -6,15 +6,12 @@
         public static PLAY: number = 1;
         public static END: number = 2;
         public static INSTRCUTIONS: number = 3;
-        
         public static LEVELS: number = 4;
         public static LEVEL1: number = 5;
         public static LEVEL2: number = 6;
         public static LEVEL3: number = 7;
-        
         public static WIN: number = 8;
-        
-        
+
     }
     
     // Screen Constants
@@ -32,10 +29,7 @@
     
     //Keyboard Key Constants
     
-    export class KEY{
+    export class KEY {
         public static SPACE: number = 32;
     }
-    
-    
-   
 }

@@ -3,7 +3,7 @@ module scenes {
     // END CLASS ++++++++++++++++++++++++++++++++++++++++++
     export class Win extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++++++++++++
-        private _gamewinLabel: createjs.Bitmap;
+        private _gamewinLabel: createjs.Sprite;
         private _playAgainButton: objects.Button;
         private _sea: objects.Sea;
       
@@ -27,11 +27,11 @@ module scenes {
             this.addChild(this._sea);
             
             //Add TITLE Label
-             this._gamewinLabel = new createjs.Bitmap(assets.getResult("CongratsMessage"));
-             this._gamewinLabel.x = 0;
-             this._gamewinLabel.y = 90;
-            
-             this.addChild(this._gamewinLabel);
+            this._gamewinLabel = new createjs.Sprite(textureAtlas, "CongratsMessage");
+            this._gamewinLabel.x = 0;
+            this._gamewinLabel.y = 90;
+
+            this.addChild(this._gamewinLabel);
             
             // add the PLAY AGAIN button to the WIN scene
             this._playAgainButton = new objects.Button(
@@ -39,7 +39,7 @@ module scenes {
                 config.Screen.CENTER_X,
                 config.Screen.CENTER_Y + 120, true);
             this.addChild(this._playAgainButton);
-            
+
             this.addChild(level3.scoreboard);
            
             // PLAY AGAIN Button event listener

@@ -26,7 +26,9 @@ var scenes;
             this._sea = new objects.Sea("CommonBackground");
             this.addChild(this._sea);
             //Add WELCOME Label
-            this._welcomeLabel = new objects.Label("WELCOME TO 'THE SEA WORLD'", "bold 26px CONSOLAS", "#0033cc", config.Screen.CENTER_X + 30, 30, true);
+            this._welcomeLabel = new createjs.Bitmap(assets.getResult("Welcome"));
+            this._welcomeLabel.x = 70;
+            this._welcomeLabel.y = 20;
             this.addChild(this._welcomeLabel);
             // add the PLAY button to the MENU scene
             this._playButton = new objects.Button("PlayButton", config.Screen.CENTER_X, config.Screen.CENTER_Y - 100, true);
@@ -61,8 +63,6 @@ var scenes;
             createjs.Sound.play("buttonpress");
             // Switch to the PLAY Scene
             scene = config.Scene.PLAY;
-            // Switch the THEME of the Scene to DAYTHEME
-            //theme = config.Sky.DAYTHEME;
             changeScene();
         };
         // INSTRUCTIONS Button click event handler
@@ -82,9 +82,6 @@ var scenes;
         // EXIT Button click event handler
         Menu.prototype._exitButtonClick = function (event) {
             createjs.Sound.play("buttonpress");
-            window.close();
-            //var objWindow = window.open(location.href, "_self");
-            //objWindow.close();
             open(location.href, '_self').close();
         };
         return Menu;

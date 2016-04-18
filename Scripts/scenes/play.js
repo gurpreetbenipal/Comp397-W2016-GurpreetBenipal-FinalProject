@@ -9,7 +9,6 @@ var scenes;
     var Play = (function (_super) {
         __extends(Play, _super);
         //PRIVATE INSTANCE VARIABLES ++++++++++++
-        //PUBLIC INSTANCE VARIABLES ++++++++++++
         // CONSTRUCTOR ++++++++++++++++++++++
         function Play() {
             _super.call(this);

@@ -3,7 +3,7 @@ module scenes {
     // LEVEL1 CLASS ++++++++++++++++++++++++++++++++++++++++++
     export class Level1 extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++++++++++++
-        private _titleLabel: createjs.Bitmap;
+        private _titleLabel: createjs.Sprite;
         private _sea: objects.Sea;
         private _player: objects.Player;
         private _item: objects.Item;
@@ -40,10 +40,10 @@ module scenes {
             this.addChild(this._sea);
             
             //Add TITLE Label1
-             this._titleLabel = new createjs.Bitmap(assets.getResult("Level1Label"));
-             this._titleLabel.x = config.Screen.CENTER_X-80;
-             this._titleLabel.y = 0;
-             this.addChild(this._titleLabel);
+            this._titleLabel = new createjs.Sprite(textureAtlas, "Level1Label");
+            this._titleLabel.x = config.Screen.CENTER_X - 80;
+            this._titleLabel.y = 0;
+            this.addChild(this._titleLabel);
             
             // added Item to the scene
             this._item = new objects.Item("Coin", "level1");
@@ -62,8 +62,7 @@ module scenes {
                 this._seamonsters[seamonster] = new objects.SeaMonsterLevel1("SeaMonster1Level1");
                 this.addChild(this._seamonsters[seamonster]);
             }
-           
-            
+          
             //added ScoreSystem to the scene
             this.scoreboard = new objects.ScoreSystem();
             this.addChild(this.scoreboard);
@@ -90,8 +89,5 @@ module scenes {
             // Check the Collision with ITEM
             this._collision.checkForLevel1(this._item);
         }
-        
-        
-        //EVENT HANDLERS ++++++++++++++++++++
     }
 }

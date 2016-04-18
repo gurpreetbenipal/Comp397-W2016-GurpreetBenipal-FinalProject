@@ -6,7 +6,6 @@ module objects {
         //PRIVATE INSTANCE VARIABLES ++++++++++++++++++++
         private _topBounds: number;
         private _bottomBounds: number;
-       // private _fishNumber : number;
         
         //PUBLIC INSTANCE VARIABLES ++++++++++++++++++++
         public width: number;
@@ -14,7 +13,7 @@ module objects {
         
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
         constructor() {
-            super(textureAtlas,"Fish");
+            super(textureAtlas, "Fish");
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
 
@@ -25,7 +24,6 @@ module objects {
             this._bottomBounds = config.Screen.HEIGHT - (this.height * 0.5);
 
             this.x = 64;
-            //this._fishNumber=1;
         }
         
         //PRIVATE METHODS
@@ -39,10 +37,10 @@ module objects {
         }
         
         //PUBLIC METHODS
+        //Update the Player 
         public update(): void {
             this.y = stage.mouseY;
             this._checkBounds();
-            
         }
     }
 }

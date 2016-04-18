@@ -15,7 +15,7 @@ module objects {
         
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
         constructor(player: objects.Player) {
-            super(textureAtlas,"Bullet");
+            super(textureAtlas, "Bullet");
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
             this.centerX = this.width * 0.5;
@@ -33,19 +33,16 @@ module objects {
         //PRIVATE METHODS
         private _checkBounds(): void {
             if (this.x >= config.Screen.WIDTH) {
-                //this.x= this._player.x;
                 this.x = 71;
                 fired = false;
                 this.isHit = false;
-                this.visible=false;
-                //this.image = assets.getResult("");
+                this.visible = false;
             }
         }
         
         //PUBLIC METHODS
         public update(): void {
-            this.visible=true;
-            //this.image = assets.getResult("Bullet");
+            this.visible = true;
             this.x += 7;
             this._checkBounds();
         }

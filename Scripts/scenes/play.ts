@@ -2,12 +2,7 @@
 module scenes {
     export class Play extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
-       
-        
-        //PUBLIC INSTANCE VARIABLES ++++++++++++
-     
-        
-        
+
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
             super();
@@ -17,11 +12,7 @@ module scenes {
         
         // Start Method
         public start(): void {
-
-
-
             stage.addChild(this);
-
         }
 
         // PLAY Scene updates here

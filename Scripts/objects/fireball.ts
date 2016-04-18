@@ -6,7 +6,7 @@ module objects {
         
         
         //CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
-        constructor(bitmapstring:string,seamonster:objects.SeaMonsterLevel3) {
+        constructor(bitmapstring: string, seamonster: objects.SeaMonsterLevel3) {
             super(bitmapstring);
             this._seamonster = seamonster;
             this._reset(this._rightBounds - 250);
@@ -20,18 +20,17 @@ module objects {
         // has outside the viewport
         protected _checkBounds(value: number): void {
             if (this.x <= value) {
-                this._reset(this._rightBounds - 250);             // 200 is the width of the Monster
+                this._reset(this._rightBounds - 250);
             }
         }
         
         //Reset the fireball offscreen
         protected _reset(value: number): void {
             this._speed.x = Math.floor(Math.random() * 5) + 5;
-            this._speed.x = (this._speed.x==5)?7:this._speed.x;
+            this._speed.x = (this._speed.x == 5) ? 7 : this._speed.x;
             this._speed.y = Math.floor(Math.random() * 4) - 2;
 
             this.x = value;
-            //this.y = Math.floor(Math.random() * this._bottomBounds) + this._topBounds;
             this.y = this._seamonster.y - 35;
             this.isHit = false;
         }
@@ -40,7 +39,6 @@ module objects {
         public update(): void {
             //Scroll the fireball 5 pixels per frame
             this.x -= this._speed.x;
-            //this.y -= this._speed.y;
             this._checkBounds(this._leftBounds - this.width);
         }
     }

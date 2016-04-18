@@ -1,18 +1,18 @@
 // LEVEL3 SCENE
 
-var fired:boolean = false;
+var fired: boolean = false;
 module scenes {
     // LEVEL3 CLASS ++++++++++++++++++++++++++++++++++++++++++
     export class Level3 extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++++++++++++
-        private _titleLabel: createjs.Bitmap;
+        private _titleLabel: createjs.Sprite;
         private _sea: objects.Sea;
-        private _player:objects.Player;
+        private _player: objects.Player;
         private _item: objects.Item;
         private _seamonster: objects.SeaMonsterLevel3;
         private _fireballs: objects.Fireball[];
         private _bullet: objects.BulletFish;
-        private _fireballsCount:number;
+        private _fireballsCount: number;
         private _collision: managers.Collision;
         
         //PUBLIC INSTANCE VARIABLES ++++++++++++
@@ -22,7 +22,6 @@ module scenes {
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++
         constructor() {
             super();
-             
         }
         
         // PUBLIC METHODS +++++++++++++++++++++++++++++++++
@@ -44,11 +43,11 @@ module scenes {
             this._sea = new objects.Sea("Level3Sea");
             this.addChild(this._sea);
             
-             //Add TITLE Label
-             this._titleLabel = new createjs.Bitmap(assets.getResult("Level3Label"));
-             this._titleLabel.x = config.Screen.CENTER_X-80;
-             this._titleLabel.y = 0;
-            
+            //Add TITLE Label
+            this._titleLabel = new createjs.Sprite(textureAtlas, "Level3Label");
+            this._titleLabel.x = config.Screen.CENTER_X - 80;
+            this._titleLabel.y = 0;
+
             this.addChild(this._titleLabel);
             
             // added Item to the scene
@@ -64,9 +63,8 @@ module scenes {
             this.addChild(this.explosion);
             
             // added SeaMonster to the scene
-            this._seamonster= new objects.SeaMonsterLevel3();
+            this._seamonster = new objects.SeaMonsterLevel3();
             this.addChild(this._seamonster);
-            
             
             //added ScoreSystem to the scene
             this.scoreboard = new objects.ScoreSystem();
@@ -77,24 +75,23 @@ module scenes {
             this._collision = new managers.Collision(this._player);
             
             //Add the Key Press event listener to the scene
-            //stage.on("keypress",this._keyPressed,this);
-            window.onkeydown=this._keyPressed;
+            window.onkeydown = this._keyPressed;
             
             // added Bullet to the scene
-            this._bullet= new objects.BulletFish(this._player);
+            this._bullet = new objects.BulletFish(this._player);
             this.addChild(this._bullet);
             
             // added Fireballs to the scene
             for (var fireball: number = 0; fireball < this._fireballsCount; fireball++) {
-                this._fireballs[fireball] = new objects.Fireball("Fireball",this._seamonster);
+                this._fireballs[fireball] = new objects.Fireball("Fireball", this._seamonster);
                 this.addChild(this._fireballs[fireball]);
             }
             
             // add this scene to the global stage container
             stage.addChild(this);
-            
-            
         }
+        
+        
         // LEVEL3 Scene updates here
         public update(): void {
             this._sea.update();
@@ -104,35 +101,35 @@ module scenes {
             
             // Check the Collision with ITEM
             this._collision.checkForLevel3(this._item);
-            
+
             this._fireballs.forEach(fireball => {
                 fireball.update();
                 // Check the Collision with Player
-                    this._collision.checkForLevel3(fireball);
+                this._collision.checkForLevel3(fireball);
             });
-            
-            if(fired == true)
-            {
+
+            if (fired == true) {
                 this._bullet.update();
                 // Check the Collision with Bullet
-                this._collision.checkForBulletCollision(this._bullet,this._seamonster);
-                
+                this._collision.checkForBulletCollision(this._bullet, this._seamonster);
+
             }
         }
         
         //EVENT HANDLERS ++++++++++++++++++++
         
         //Key Pressed Event Handler
-        private _keyPressed(event:KeyboardEvent):void{
+        private _keyPressed(event: KeyboardEvent): void {
             switch (event.keyCode) {
-                    case config.KEY.SPACE:
-                        fired=true;
-                        level3._bullet.visible=true;
-                        createjs.Sound.play("BulletSound");
-                        level3._bullet.y = level3._player.y + level3._player.height * 0.5;
-                        level3._bullet.x = 71;
-                        //level3._bullet.update(level3._player);
-                        break;
+                case config.KEY.SPACE:
+                    fired = true;                             //Set the Bullet fired true whne SPACEBAR is pressed                               
+                    level3._bullet.visible = true;
+                    createjs.Sound.play("BulletSound");
+                                
+                    //Set the X and Y position of bullet
+                    level3._bullet.x = 71;
+                    level3._bullet.y = level3._player.y + level3._player.height * 0.5;
+                    break;
             }
         }
     }

@@ -26,6 +26,7 @@ var objects;
         //Reset the item offscreen
         Item.prototype._reset = function (value) {
             var randomNumber = Math.floor(Math.random() * 5) + 1;
+            //Pick random Item for Level1
             if (this._currentLevel == "level1") {
                 switch (randomNumber) {
                     case 1:
@@ -89,6 +90,7 @@ var objects;
                         break;
                 }
             }
+            //Set the X and Y coordinates of Item
             this.x = value;
             this.y = Math.floor(Math.random() * this._bottomBounds) + this._topBounds;
         };

@@ -1,11 +1,14 @@
 ﻿module objects {
+    //BUTTON CLASS +++++++++++++++++++++++++++++++++++
     export class Button extends createjs.Sprite {
+       
         //PRIVATE INSTANCE VARIABLES
         width: number;
         height: number;
+        
         //CONSTRUCTOR
         constructor(pathString: string, x: number, y: number, centered: boolean) {
-            super(textureAtlas,pathString);
+            super(textureAtlas, pathString);
             this.x = x;
             this.y = y;
 

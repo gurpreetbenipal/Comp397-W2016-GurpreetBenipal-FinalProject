@@ -24,7 +24,6 @@ var objects;
         //PRIVATE METHODS
         BulletFish.prototype._checkBounds = function () {
             if (this.x >= config.Screen.WIDTH) {
-                //this.x= this._player.x;
                 this.x = 71;
                 fired = false;
                 this.isHit = false;
@@ -34,7 +33,6 @@ var objects;
         //PUBLIC METHODS
         BulletFish.prototype.update = function () {
             this.visible = true;
-            //this.image = assets.getResult("Bullet");
             this.x += 7;
             this._checkBounds();
         };
