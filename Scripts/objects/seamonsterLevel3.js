@@ -15,7 +15,7 @@ var objects;
             this.height = this.getBounds().height;
             this.regX = this.width * 0.5;
             this.regY = this.height * 0.5;
-            this._topBounds = this.height * 0.5;
+            this._topBounds = this.height * 0.5 + 40;
             this._bottomBounds = config.Screen.HEIGHT - (this.height * 0.5);
             this.x = 600;
             this.y = 0;

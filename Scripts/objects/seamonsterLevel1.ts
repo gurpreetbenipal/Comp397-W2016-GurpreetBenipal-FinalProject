@@ -53,7 +53,6 @@ module objects {
         public update(): void {
             //Scroll the Seamonster 5 pixels per frame
             this.x -= this._speed.x;
-            //this.y -= this._speed.y;
             this._checkBounds(this._leftBounds - this.width);
         }
     }

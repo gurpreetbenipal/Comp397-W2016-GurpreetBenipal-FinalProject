@@ -39,6 +39,10 @@ module scenes {
             this._sea = new objects.Sea("Level1Sea");
             this.addChild(this._sea);
             
+            //added ScoreSystem to the scene
+            this.scoreboard = new objects.ScoreSystem();
+            this.addChild(this.scoreboard);
+            
             //Add TITLE Label1
             this._titleLabel = new createjs.Sprite(textureAtlas, "Level1Label");
             this._titleLabel.x = config.Screen.CENTER_X - 80;
@@ -63,9 +67,7 @@ module scenes {
                 this.addChild(this._seamonsters[seamonster]);
             }
           
-            //added ScoreSystem to the scene
-            this.scoreboard = new objects.ScoreSystem();
-            this.addChild(this.scoreboard);
+            
            
             // added Collision Manager to the scene
             this._collision = new managers.Collision(this._player);

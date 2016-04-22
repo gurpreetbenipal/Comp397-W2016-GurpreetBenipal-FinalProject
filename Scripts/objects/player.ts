@@ -39,7 +39,7 @@ module objects {
         //PUBLIC METHODS
         //Update the Player 
         public update(): void {
-            this.y = stage.mouseY;
+            this.y = stage.mouseY+50;
             this._checkBounds();
         }
     }

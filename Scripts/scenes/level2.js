@@ -27,6 +27,9 @@ var scenes;
             // added Sea to the scene
             this._sea = new objects.Sea("Level2Sea");
             this.addChild(this._sea);
+            //added ScoreSystem to the scene
+            this.scoreboard = new objects.ScoreSystem();
+            this.addChild(this.scoreboard);
             //Add TITLE Label2
             this._titleLabel = new createjs.Sprite(textureAtlas, "Level2Label");
             this._titleLabel.x = config.Screen.CENTER_X - 80;
@@ -46,9 +49,6 @@ var scenes;
                 this._seamonsters[seamonster] = new objects.SeaMonsterLevel2("SeaMonster1Level2");
                 this.addChild(this._seamonsters[seamonster]);
             }
-            //added ScoreSystem to the scene
-            this.scoreboard = new objects.ScoreSystem();
-            this.addChild(this.scoreboard);
             // added Collision Manager to the scene
             this._collision = new managers.Collision(this._player);
             // add this scene to the global stage container

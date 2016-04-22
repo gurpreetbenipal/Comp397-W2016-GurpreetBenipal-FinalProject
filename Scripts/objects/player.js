@@ -31,7 +31,7 @@ var objects;
         //PUBLIC METHODS
         //Update the Player 
         Player.prototype.update = function () {
-            this.y = stage.mouseY;
+            this.y = stage.mouseY + 50;
             this._checkBounds();
         };
         return Player;

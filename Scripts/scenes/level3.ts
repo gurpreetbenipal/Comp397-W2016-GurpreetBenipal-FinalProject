@@ -43,6 +43,11 @@ module scenes {
             this._sea = new objects.Sea("Level3Sea");
             this.addChild(this._sea);
             
+            //added ScoreSystem to the scene
+            this.scoreboard = new objects.ScoreSystem();
+            this.addChild(this.scoreboard);
+            this.scoreboard.addEnemyHealthLabel();
+            
             //Add TITLE Label
             this._titleLabel = new createjs.Sprite(textureAtlas, "Level3Label");
             this._titleLabel.x = config.Screen.CENTER_X - 80;
@@ -62,14 +67,14 @@ module scenes {
             this.explosion = new objects.Explosion();
             this.addChild(this.explosion);
             
+            // added Bullet to the scene
+            this._bullet = new objects.BulletFish(this._player);
+            this.addChild(this._bullet);
+            
             // added SeaMonster to the scene
             this._seamonster = new objects.SeaMonsterLevel3();
             this.addChild(this._seamonster);
             
-            //added ScoreSystem to the scene
-            this.scoreboard = new objects.ScoreSystem();
-            this.addChild(this.scoreboard);
-            this.scoreboard.addEnemyHealthLabel();
             
             // added Collision Manager to the scene
             this._collision = new managers.Collision(this._player);
@@ -77,9 +82,6 @@ module scenes {
             //Add the Key Press event listener to the scene
             window.onkeydown = this._keyPressed;
             
-            // added Bullet to the scene
-            this._bullet = new objects.BulletFish(this._player);
-            this.addChild(this._bullet);
             
             // added Fireballs to the scene
             for (var fireball: number = 0; fireball < this._fireballsCount; fireball++) {
@@ -122,13 +124,15 @@ module scenes {
         private _keyPressed(event: KeyboardEvent): void {
             switch (event.keyCode) {
                 case config.KEY.SPACE:
-                    fired = true;                             //Set the Bullet fired true whne SPACEBAR is pressed                               
+                    fired = true;                             //Set the Bullet fired true when SPACEBAR is pressed                               
                     level3._bullet.visible = true;
                     createjs.Sound.play("BulletSound");
                                 
                     //Set the X and Y position of bullet
-                    level3._bullet.x = 71;
-                    level3._bullet.y = level3._player.y + level3._player.height * 0.5;
+                    
+                        level3._bullet.x = 71;
+                        level3._bullet.y = level3._player.y + level3._player.height * 0.5;
+                    
                     break;
             }
         }
